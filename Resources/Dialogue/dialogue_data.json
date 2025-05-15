@@ -1,0 +1,191 @@
+{
+	"npc_1": {
+		"trees": [
+			{
+				"branch_id": "npc_1_1",
+				"dialogues": [
+					{
+						"state": "start",
+						"text": "Brr...",
+						"options": {
+							"Ask What's Wrong": "in_progress",
+							"Receive Quests": "give_quests",
+							"Say Goodbye": "exit"
+						}
+					},
+					{
+						"state": "in_progress",
+						"text": "I'm s-so c-c-cold. It was supposed to be s-spring, but the sun h-hasn't come back because of C-Coldheart.",
+						"options": {
+							"Say Goodbye": "end",
+							"Who is Coldheart?": "in_progress_2",
+							"Go Back": "start"
+						}
+					},
+					{
+						"state": "in_progress_2",
+						"text": "While you were in your b-burrow, Coldheart came and b-blocked out the sun. All the other animals are working in his f-factory. I escaped, b-but I might have to g-g-go back so I don't freeze out here!",
+						"options": {
+							"Say Goodbye": "end",
+							"Offer to Help": "give_quests",
+							"Go Back": "start"
+						}
+					},
+					{
+						"state": "give_quests",
+						"text": "I t-think Suzy Songbird is stuck out here, t-too. If you find her she'll p-probably have more information for you.",
+						"options": {
+							"Say Goodbye": "exit",
+							"Go Back": "start"
+						}
+					},
+					{
+						"state": "end",
+						"text": "Good luck, G-Gary.",
+						"options": {}
+					},
+					{
+						"state": "exit",
+						"text": "Goodbye.",
+						"options": {}
+					}
+				]
+			},
+			{
+				"branch_id": "npc_1_2",
+				"dialogues": [
+					{
+						"state": "start",
+						"text": "Back again, G-gary?",
+						"options": {
+							"Continue Asking What's Wrong": "in_progress",
+							"Ask more about Coldheart": "in_progress_2",
+							"Receive Quests": "give_quests",
+							"Say Goodbye": "exit"
+						}
+					},
+					{
+						"state": "in_progress",
+						"text": "Even m-my tree hollow doesn't keep out Coldheart's c-cold!",
+						"options": {
+							"Ask more about Coldheart": "in_progress_2",
+							"Say Goodbye": "end",
+							"Go Back": "start"
+						}
+					},
+					{
+						"state": "in_progress_2",
+						"text": "Nobody knows w-where he came from. He thrives in the c-cold, which is why he has his f-factory making enough smoke to b-block out the sun!",
+						"options": {
+							"Offer to Help": "give_quests",
+							"Say Goodbye": "end",
+							"Go Back": "start"
+						}
+					},
+					{
+						"state": "give_quests",
+						"text": "I t-think Suzy Songbird is stuck out here, t-too. If you find her she'll p-probably have more information for you.",
+						"options": {
+							"Say Goodbye": "exit",
+							"Go Back": "start"
+						}
+					},
+					{
+						"state": "end",
+						"text": "G-good luck, Gary!",
+						"options": {}
+					},
+					{
+						"state": "exit",
+						"text": "Goodbye!",
+						"options": {}
+					}
+				]
+			},
+			{
+				"branch_id": "npc_default",
+				"dialogues": [
+					{
+						"state": "start",
+						"text": "Thank you for t-trying to help, Gary! Good luck!",
+						"options": {
+							"Offer to Help": "give_quests",
+							"Say Goodbye": "exit"
+						}
+					},
+					{
+						"state": "give_quests",
+						"text": "If there's anything else, it'll be in your q-quest log.",
+						"options": {
+							"Go Back": "start"
+						}
+					}
+				]
+			}
+		]
+	},
+	"npc_2": {
+		"trees": [
+			{
+				"branch_id": "npc_2_1",
+				"dialogs": [
+					{
+						"state": "start",
+						"text": "Greetings, traveler! How can I assist you?",
+						"options": {
+							"Ask About Forest": "in_progress",
+							"Receive Quests": "give_quests",
+							"Say Goodbye": "exit"
+						}
+					},
+					{
+						"state": "in_progress",
+						"text": "The forest is home to many mystical creatures.",
+						"options": {
+							"Say Goodbye": "end",
+							"Go Back": "start"
+						}
+					},
+					{
+						"state": "give_quests",
+						"text": "Okay. I've updated your quest log with things I need done.",
+						"options": {
+							"Say Goodbye": "exit",
+							"Go Back": "start"
+						}
+					},
+					{
+						"state": "end",
+						"text": "Farewell, traveler!",
+						"options": {}
+					},
+					{
+						"state": "exit",
+						"text": "Come back soon!",
+						"options": {}
+					}
+				]
+			},
+			{
+			"branch_id": "npc_default",
+				"dialogs": [
+					{
+						"state": "start",
+						"text": "I wonder why Bobby is always smelling me...",
+						"options": {
+							"Receive Quests": "give_quests",
+							"Say Goodbye": "exit"
+						}
+					},
+					{
+						"state": "give_quests",
+						"text": "Okay. I've updated your quest log with things I need done.",
+						"options": {
+							"Go Back": "start"
+						}
+					},
+				]
+			}
+		]
+	}
+}

@@ -1,0 +1,92 @@
+[gd_scene load_steps=17 format=3 uid="uid://dg2f0hjxn7wia"]
+
+[ext_resource type="Texture2D" uid="uid://c6rng45668r5b" path="res://assets/sprites/spritesheet_blue jay.png" id="1_2uxsu"]
+[ext_resource type="Script" path="res://scripts/songbird.gd" id="1_627e5"]
+[ext_resource type="Script" path="res://Resources/Dialogue/Dialogue.gd" id="2_hlnp6"]
+[ext_resource type="Script" path="res://Resources/Quest/Quests.gd" id="3_5dy4f"]
+[ext_resource type="Script" path="res://Resources/Quest/Objectives.gd" id="4_qawb8"]
+[ext_resource type="Script" path="res://Resources/Quest/Rewards.gd" id="5_g4gma"]
+
+[sub_resource type="Resource" id="Resource_363qd"]
+script = ExtResource("2_hlnp6")
+dialogues = {}
+
+[sub_resource type="Resource" id="Resource_agd35"]
+script = ExtResource("4_qawb8")
+id = "obj_collect_01"
+description = "Collect 8 flames"
+target_id = "item_flame"
+target_type = "collection"
+objective_dialog = ""
+required_quantity = 8
+collected_quantity = 0
+is_completed = false
+
+[sub_resource type="Resource" id="Resource_hkam7"]
+script = ExtResource("5_g4gma")
+reward_type = "coins"
+reward_amount = 1
+
+[sub_resource type="Resource" id="Resource_sve52"]
+script = ExtResource("3_5dy4f")
+quest_id = "npc_2_quest_1"
+quest_name = "Melt the Ice"
+quest_description = "Collect 8 flames to help Suzy escape the ice."
+state = "not_started"
+unlock_id = ""
+objectives = Array[ExtResource("4_qawb8")]([SubResource("Resource_agd35")])
+rewards = Array[ExtResource("5_g4gma")]([SubResource("Resource_hkam7")])
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dj20h"]
+atlas = ExtResource("1_2uxsu")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_13ndm"]
+atlas = ExtResource("1_2uxsu")
+region = Rect2(16, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c08oo"]
+atlas = ExtResource("1_2uxsu")
+region = Rect2(32, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h8bme"]
+atlas = ExtResource("1_2uxsu")
+region = Rect2(48, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nlmqn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dj20h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_13ndm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c08oo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h8bme")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w8au8"]
+
+[node name="songbird" type="Area2D" groups=["NPC"]]
+script = ExtResource("1_627e5")
+npc_id = "npc_2"
+npc_name = "Suzy Songbird"
+dialogue_resource = SubResource("Resource_363qd")
+quests = Array[ExtResource("3_5dy4f")]([SubResource("Resource_sve52")])
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_nlmqn")
+animation = &"idle"
+frame = 1
+frame_progress = 0.856882
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_w8au8")

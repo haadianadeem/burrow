@@ -1,0 +1,88 @@
+[gd_scene load_steps=3 format=3 uid="uid://cup3ygbebky5d"]
+
+[ext_resource type="Script" path="res://scripts/DialogueUI.gd" id="1_lplb7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eba6e"]
+bg_color = Color(0.141176, 0.431373, 0.74902, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.603781, 0.839268, 0.95269, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[node name="DialogueUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lplb7")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -294.0
+offset_right = -10.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_eba6e")
+
+[node name="DialogueBox" type="VBoxContainer" parent="CanvasLayer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="DialogueSpeaker" type="Label" parent="CanvasLayer/Panel/DialogueBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.603781, 0.839268, 0.95269, 1)
+theme_override_font_sizes/font_size = 20
+text = "Scotty Squirrel"
+horizontal_alignment = 1
+
+[node name="DialogueText" type="Label" parent="CanvasLayer/Panel/DialogueBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 23
+text = "Dialogue text... super duper long dialogue text that goes way beyond just one line of text. what does that look like"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="DialogueOptions" type="HBoxContainer" parent="CanvasLayer/Panel/DialogueBox"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="CloseButton" type="Button" parent="CanvasLayer/Panel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -47.0
+offset_top = 11.0
+offset_right = -11.0
+offset_bottom = 47.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 20
+text = "X"
+
+[connection signal="pressed" from="CanvasLayer/Panel/CloseButton" to="." method="_on_close_button_pressed"]

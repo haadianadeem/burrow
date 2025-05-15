@@ -1,0 +1,104 @@
+[gd_scene load_steps=18 format=3 uid="uid://cnns62o2uxejt"]
+
+[ext_resource type="Texture2D" uid="uid://duyvhp6jog6et" path="res://assets/sprites/ScroungingSquirrel.png" id="1_qk12n"]
+[ext_resource type="Script" path="res://scripts/squirrel.gd" id="1_ukpnh"]
+[ext_resource type="Script" path="res://Resources/Dialogue/Dialogue.gd" id="2_itg0j"]
+[ext_resource type="Script" path="res://Resources/Quest/Quests.gd" id="3_1y2vt"]
+[ext_resource type="PackedScene" uid="uid://dsfxbmt54dote" path="res://assets/scenes/Dialogue/dialogue_manager.tscn" id="4_28mbf"]
+[ext_resource type="Script" path="res://Resources/Quest/Objectives.gd" id="4_oadun"]
+[ext_resource type="Script" path="res://Resources/Quest/Rewards.gd" id="5_v2xlj"]
+
+[sub_resource type="Resource" id="Resource_ts6ei"]
+script = ExtResource("2_itg0j")
+dialogues = {}
+
+[sub_resource type="Resource" id="Resource_7r228"]
+script = ExtResource("4_oadun")
+id = "npc_talk_01"
+description = "Talk to Suzy Songbird"
+target_id = "npc_2"
+target_type = "talk_to"
+objective_dialog = "Help me!"
+required_quantity = 0
+collected_quantity = 0
+is_completed = false
+
+[sub_resource type="Resource" id="Resource_56dha"]
+script = ExtResource("4_oadun")
+id = "obj_collect_01"
+description = "Collect 5 Flames"
+target_id = ""
+target_type = ""
+objective_dialog = ""
+required_quantity = 0
+collected_quantity = 0
+is_completed = false
+
+[sub_resource type="Resource" id="Resource_mirye"]
+script = ExtResource("3_1y2vt")
+quest_id = "npc_1_quest_1"
+quest_name = "Find Suzy Songbird"
+quest_description = "Find Suzy Songbird and see what she needs."
+state = "not_started"
+unlock_id = "npc_1_1"
+objectives = Array[ExtResource("4_oadun")]([SubResource("Resource_7r228"), SubResource("Resource_56dha")])
+rewards = Array[ExtResource("5_v2xlj")]([])
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qrjee"]
+atlas = ExtResource("1_qk12n")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ohnl5"]
+atlas = ExtResource("1_qk12n")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dk27n"]
+atlas = ExtResource("1_qk12n")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p3vmo"]
+atlas = ExtResource("1_qk12n")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_brnmo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qrjee")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ohnl5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dk27n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p3vmo")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 8.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8k135"]
+radius = 3.0
+height = 12.0
+
+[node name="squirrel" type="Area2D" groups=["NPC"]]
+script = ExtResource("1_ukpnh")
+npc_id = "npc_1"
+npc_name = "Scotty Squirrel"
+dialogue_resource = SubResource("Resource_ts6ei")
+quests = Array[ExtResource("3_1y2vt")]([SubResource("Resource_mirye")])
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_brnmo")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.681227
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("CapsuleShape2D_8k135")
+
+[node name="DialogueManager" parent="." instance=ExtResource("4_28mbf")]
