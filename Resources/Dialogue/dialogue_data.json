@@ -128,7 +128,7 @@
 		"trees": [
 			{
 				"branch_id": "npc_2_1",
-				"dialogs": [
+				"dialogues": [
 					{
 						"state": "start",
 						"text": "Greetings, traveler! How can I assist you?",
@@ -168,7 +168,7 @@
 			},
 			{
 			"branch_id": "npc_default",
-				"dialogs": [
+				"dialogues": [
 					{
 						"state": "start",
 						"text": "I wonder why Bobby is always smelling me...",

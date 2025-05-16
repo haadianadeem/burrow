@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://ct3ql8cvhu85u"]
+[gd_scene load_steps=35 format=3 uid="uid://ct3ql8cvhu85u"]
 
 [ext_resource type="Texture2D" uid="uid://dklqd6bqahttj" path="res://assets/sprites/world_tileset.png" id="1_p1ssu"]
 [ext_resource type="PackedScene" uid="uid://cv6d6gu7xlp3y" path="res://assets/scenes/player.tscn" id="1_pc1ne"]
@@ -19,6 +19,7 @@
 [ext_resource type="Script" path="res://Resources/Quest/Objectives.gd" id="16_xosfk"]
 [ext_resource type="Script" path="res://Resources/Quest/Rewards.gd" id="17_h3a8t"]
 [ext_resource type="Texture2D" uid="uid://d2tlwj204vov8" path="res://assets/sprites/questitem3.png" id="19_y1q2f"]
+[ext_resource type="PackedScene" uid="uid://dg2f0hjxn7wia" path="res://assets/scenes/songbird.tscn" id="20_lkxje"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_i5n5i"]
 font = ExtResource("2_fxj4u")
@@ -737,3 +738,6 @@ position = Vector2(1270, -47)
 position = Vector2(466, 2)
 item_id = "item_flame"
 item_icon = ExtResource("19_y1q2f")
+
+[node name="songbird" parent="." instance=ExtResource("20_lkxje")]
+position = Vector2(250, -10)

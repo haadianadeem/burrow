@@ -95,7 +95,8 @@ quests = Array[ExtResource("3_1y2vt")]([SubResource("Resource_mirye")])
 sprite_frames = SubResource("SpriteFrames_brnmo")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.681227
+frame = 3
+frame_progress = 0.659203
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)

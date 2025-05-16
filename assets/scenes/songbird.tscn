@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dg2f0hjxn7wia"]
+[gd_scene load_steps=18 format=3 uid="uid://dg2f0hjxn7wia"]
 
 [ext_resource type="Texture2D" uid="uid://c6rng45668r5b" path="res://assets/sprites/spritesheet_blue jay.png" id="1_2uxsu"]
 [ext_resource type="Script" path="res://scripts/songbird.gd" id="1_627e5"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Resources/Quest/Quests.gd" id="3_5dy4f"]
 [ext_resource type="Script" path="res://Resources/Quest/Objectives.gd" id="4_qawb8"]
 [ext_resource type="Script" path="res://Resources/Quest/Rewards.gd" id="5_g4gma"]
+[ext_resource type="PackedScene" uid="uid://dsfxbmt54dote" path="res://assets/scenes/Dialogue/dialogue_manager.tscn" id="7_gpejh"]
 
 [sub_resource type="Resource" id="Resource_363qd"]
 script = ExtResource("2_hlnp6")
@@ -85,8 +86,9 @@ quests = Array[ExtResource("3_5dy4f")]([SubResource("Resource_sve52")])
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_nlmqn")
 animation = &"idle"
-frame = 1
-frame_progress = 0.856882
+autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_w8au8")
+
+[node name="DialogueManager" parent="." instance=ExtResource("7_gpejh")]
