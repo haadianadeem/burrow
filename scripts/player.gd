@@ -1,8 +1,12 @@
 extends CharacterBody2D
 
 
-const SPEED = 130.0
-const JUMP_VELOCITY = -300.0
+var SPEED = 130.0
+var JUMP_VELOCITY = -300.0
+var acceleration = 35.0
+var max_speed = 300.0
+var current_speed = SPEED
+
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -68,6 +72,19 @@ func _physics_process(delta: float) -> void:
 			velocity.x = direction * SPEED
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
+			
+		# Apply acceleration logic
+		if direction != 0:
+			# If the character is starting, immediately apply base speed
+			if current_speed == 0.0:
+				current_speed = SPEED
+			# Accelerate smoothly after the initial base speed
+			current_speed = clamp(current_speed + acceleration * delta, SPEED, max_speed)
+			velocity.x = direction * current_speed
+		else:
+			# Decelerate smoothly when no input
+			current_speed = move_toward(current_speed, 0, acceleration * delta * 1.5)
+			velocity.x = 0
 
 		move_and_slide()
 

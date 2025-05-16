@@ -9,7 +9,7 @@
 						"text": "Brr...",
 						"options": {
 							"Ask What's Wrong": "in_progress",
-							"Receive Quests": "give_quests",
+							"Offer to Help": "give_quests",
 							"Say Goodbye": "exit"
 						}
 					},
@@ -17,26 +17,26 @@
 						"state": "in_progress",
 						"text": "I'm s-so c-c-cold. It was supposed to be s-spring, but the sun h-hasn't come back because of C-Coldheart.",
 						"options": {
-							"Say Goodbye": "end",
 							"Who is Coldheart?": "in_progress_2",
-							"Go Back": "start"
+							"Go Back": "start",
+							"Say Goodbye": "end"
 						}
 					},
 					{
 						"state": "in_progress_2",
 						"text": "While you were in your b-burrow, Coldheart came and b-blocked out the sun. All the other animals are working in his f-factory. I escaped, b-but I might have to g-g-go back so I don't freeze out here!",
 						"options": {
-							"Say Goodbye": "end",
 							"Offer to Help": "give_quests",
-							"Go Back": "start"
+							"Go Back": "start",
+							"Say Goodbye": "end"
 						}
 					},
 					{
 						"state": "give_quests",
 						"text": "I t-think Suzy Songbird is stuck out here, t-too. If you find her she'll p-probably have more information for you.",
 						"options": {
+							"Go Back": "start",
 							"Say Goodbye": "exit",
-							"Go Back": "start"
 						}
 					},
 					{
@@ -69,8 +69,8 @@
 						"text": "Even m-my tree hollow doesn't keep out Coldheart's c-cold!",
 						"options": {
 							"Ask more about Coldheart": "in_progress_2",
-							"Say Goodbye": "end",
-							"Go Back": "start"
+							"Go Back": "start",
+							"Say Goodbye": "end"
 						}
 					},
 					{
@@ -78,16 +78,16 @@
 						"text": "Nobody knows w-where he came from. He thrives in the c-cold, which is why he has his f-factory making enough smoke to b-block out the sun!",
 						"options": {
 							"Offer to Help": "give_quests",
+							"Go Back": "start",
 							"Say Goodbye": "end",
-							"Go Back": "start"
 						}
 					},
 					{
 						"state": "give_quests",
 						"text": "I t-think Suzy Songbird is stuck out here, t-too. If you find her she'll p-probably have more information for you.",
 						"options": {
+							"Go Back": "start",
 							"Say Goodbye": "exit",
-							"Go Back": "start"
 						}
 					},
 					{
@@ -131,24 +131,25 @@
 				"dialogues": [
 					{
 						"state": "start",
-						"text": "Greetings, traveler! How can I assist you?",
+						"text": "You there! Please help me!",
 						"options": {
-							"Ask About Forest": "in_progress",
-							"Receive Quests": "give_quests",
+							"Ask What's Wrong": "in_progress",
+							"Offer to Help": "give_quests",
 							"Say Goodbye": "exit"
 						}
 					},
 					{
 						"state": "in_progress",
-						"text": "The forest is home to many mystical creatures.",
+						"text": "I tried to escape Coldheart's factory, but ended up stuck in this ice instead!",
 						"options": {
+							"Offer to Help": "give_quests",
 							"Say Goodbye": "end",
 							"Go Back": "start"
 						}
 					},
 					{
 						"state": "give_quests",
-						"text": "Okay. I've updated your quest log with things I need done.",
+						"text": "If you can collect enough fire, you can melt this ice off me. Check your quest log!",
 						"options": {
 							"Say Goodbye": "exit",
 							"Go Back": "start"
@@ -156,12 +157,12 @@
 					},
 					{
 						"state": "end",
-						"text": "Farewell, traveler!",
+						"text": "I hope you can help!",
 						"options": {}
 					},
 					{
 						"state": "exit",
-						"text": "Come back soon!",
+						"text": "Thank you for your help!",
 						"options": {}
 					}
 				]
@@ -171,18 +172,29 @@
 				"dialogues": [
 					{
 						"state": "start",
-						"text": "I wonder why Bobby is always smelling me...",
+						"text": "Melt this ice around me, please!",
 						"options": {
-							"Receive Quests": "give_quests",
+							"Offer to Help": "give_quests",
 							"Say Goodbye": "exit"
 						}
 					},
 					{
 						"state": "give_quests",
-						"text": "Okay. I've updated your quest log with things I need done.",
+						"text": "If you can collect enough fire, you can melt this ice off me. Check your quest log!",
 						"options": {
-							"Go Back": "start"
+							"Go Back": "start",
+							"Say Goodbye": "end"
 						}
+					},
+					{
+						"state": "end",
+						"text": "I hope you can help!",
+						"options": {}
+					},
+					{
+						"state": "exit",
+						"text": "Thank you for your help!",
+						"options": {}
 					},
 				]
 			}
