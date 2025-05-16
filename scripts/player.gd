@@ -3,9 +3,11 @@ extends CharacterBody2D
 
 var SPEED = 130.0
 var JUMP_VELOCITY = -300.0
-var acceleration = 35.0
-var max_speed = 300.0
+var acceleration = 70.0
+var max_speed = 350.0
 var current_speed = SPEED
+var last_direction = 0
+var current_animation = ""
 
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -60,13 +62,13 @@ func _physics_process(delta: float) -> void:
 		elif direction < 0:
 			animated_sprite.flip_h = true
 			
-		if is_on_floor(): 
-			if direction == 0:
-				animated_sprite.play("idle")
-			else:
-				animated_sprite.play("run")
-		else:
-			animated_sprite.play("jump")
+		#if is_on_floor(): 
+		#	if direction == 0:
+		#		animated_sprite.play("idle")
+		#	else:
+		#		animated_sprite.play("run")
+		#else:
+		#	animated_sprite.play("jump")
 		
 		if direction:
 			velocity.x = direction * SPEED
@@ -75,16 +77,37 @@ func _physics_process(delta: float) -> void:
 			
 		# Apply acceleration logic
 		if direction != 0:
-			# If the character is starting, immediately apply base speed
-			if current_speed == 0.0:
+			# If switching direction, reset to base speed
+			if direction != last_direction:
 				current_speed = SPEED
 			# Accelerate smoothly after the initial base speed
 			current_speed = clamp(current_speed + acceleration * delta, SPEED, max_speed)
 			velocity.x = direction * current_speed
+			last_direction = direction  # Update the last direction
 		else:
-			# Decelerate smoothly when no input
-			current_speed = move_toward(current_speed, 0, acceleration * delta * 1.5)
+			# Immediately stop and go to idle if no input
+			current_speed = 0
 			velocity.x = 0
+			last_direction = 0  
+			if current_animation != "idle":
+				current_animation = "idle"
+				animated_sprite.play("idle")
+
+		# Animation state switching based on speed
+		if is_on_floor():
+			if current_speed == 0 and current_animation != "idle":
+				current_animation = "idle"
+				animated_sprite.play("idle")
+			elif current_speed > 0 and current_speed <= 250 and current_animation != "walk":
+				current_animation = "walk"
+				animated_sprite.play("walk")
+			elif current_speed > 250 and current_animation != "run":
+				current_animation = "run"
+				animated_sprite.play("run")
+		else:
+			if current_animation != "jump":
+				current_animation = "jump"
+				animated_sprite.play("jump")
 
 		move_and_slide()
 
