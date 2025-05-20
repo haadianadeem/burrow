@@ -305,10 +305,12 @@ frame = 1
 frame_progress = 0.795354
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, -5)
 shape = SubResource("CircleShape2D_d2f7q")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
+visible = false
 collide_with_areas = true
 
 [node name="HUD" type="CanvasLayer" parent="."]
