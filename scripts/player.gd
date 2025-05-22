@@ -1,3 +1,5 @@
+#player.gd
+
 extends CharacterBody2D
 
 
@@ -8,6 +10,8 @@ var max_speed = 350.0
 var current_speed = SPEED
 var last_direction = 0
 var current_animation = ""
+var respawn_position: Vector2
+
 
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -28,6 +32,7 @@ var coin_amount = 0
 
 func _ready():
 	Global.player = self
+	respawn_position = global_position
 	quest_tracker.visible = false
 	update_coins()
 
@@ -110,6 +115,10 @@ func _physics_process(delta: float) -> void:
 				animated_sprite.play("jump")
 
 		move_and_slide()
+		
+func set_checkpoint(position: Vector2):
+	respawn_position = position
+
 
 func _input(event):
 	#Interact with NPC/ Quest Item
