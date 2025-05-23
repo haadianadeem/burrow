@@ -229,6 +229,26 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_84r7q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ngvqo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f66rs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rbjrt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p4dr1")
+}],
+"loop": true,
+"name": &"rise",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_60nai")
 }, {
 "duration": 1.0,
@@ -301,6 +321,8 @@ position = Vector2(4, -8)
 sprite_frames = SubResource("SpriteFrames_uau5j")
 animation = &"duck"
 autoplay = "idle"
+frame = 3
+frame_progress = 0.195371
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -5)

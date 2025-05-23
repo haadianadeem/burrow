@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://ct3ql8cvhu85u"]
+[gd_scene load_steps=44 format=3 uid="uid://ct3ql8cvhu85u"]
 
 [ext_resource type="Texture2D" uid="uid://dklqd6bqahttj" path="res://assets/sprites/world_tileset.png" id="1_p1ssu"]
 [ext_resource type="PackedScene" uid="uid://cv6d6gu7xlp3y" path="res://assets/scenes/player.tscn" id="1_pc1ne"]
@@ -690,9 +690,20 @@ required_quantity = 8
 collected_quantity = 0
 is_completed = false
 
+[sub_resource type="Resource" id="Resource_cpy80"]
+script = ExtResource("16_xosfk")
+id = "talk_to_01"
+description = "Take the flames back to Suzy Songbird."
+target_id = "npc_2"
+target_type = "talk_to"
+objective_dialogue = "You got the fire! Thank you! I'll give you a potion I took from Coldheart - maybe it will help you in the future. Thank you for setting me free."
+required_quantity = 0
+collected_quantity = 0
+is_completed = false
+
 [sub_resource type="Resource" id="Resource_2pfky"]
 script = ExtResource("17_h3a8t")
-reward_type = "Potion"
+reward_type = "coins"
 reward_amount = 1
 
 [sub_resource type="Resource" id="Resource_knx2m"]
@@ -702,7 +713,7 @@ quest_name = "Melt the Ice"
 quest_description = "Find 8 flames to help melt the ice trapping Suzy"
 state = "not_started"
 unlock_id = "npc_2_1"
-objectives = Array[ExtResource("16_xosfk")]([SubResource("Resource_cohj0")])
+objectives = Array[ExtResource("16_xosfk")]([SubResource("Resource_cohj0"), SubResource("Resource_cpy80")])
 rewards = Array[ExtResource("17_h3a8t")]([SubResource("Resource_2pfky")])
 
 [node name="Game" type="Node2D"]
