@@ -5,6 +5,26 @@
 [ext_resource type="Texture2D" uid="uid://by41smkkonelp" path="res://assets/sprites/QuestItem.png" id="3_5tsgp"]
 [ext_resource type="PackedScene" uid="uid://mi4ck7q8k8j7" path="res://assets/scenes/Quest/QuestManager.tscn" id="4_vjhih"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_p4dr1"]
+atlas = ExtResource("2_yuyln")
+region = Rect2(33, 288, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rbjrt"]
+atlas = ExtResource("2_yuyln")
+region = Rect2(65, 288, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f66rs"]
+atlas = ExtResource("2_yuyln")
+region = Rect2(97, 288, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ngvqo"]
+atlas = ExtResource("2_yuyln")
+region = Rect2(129, 288, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_84r7q"]
+atlas = ExtResource("2_yuyln")
+region = Rect2(161, 288, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_801ts"]
 atlas = ExtResource("2_yuyln")
 region = Rect2(33, 192, 32, 32)
@@ -64,26 +84,6 @@ region = Rect2(65, 352, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_b16yy"]
 atlas = ExtResource("2_yuyln")
 region = Rect2(33, 352, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_84r7q"]
-atlas = ExtResource("2_yuyln")
-region = Rect2(161, 288, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ngvqo"]
-atlas = ExtResource("2_yuyln")
-region = Rect2(129, 288, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_f66rs"]
-atlas = ExtResource("2_yuyln")
-region = Rect2(97, 288, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rbjrt"]
-atlas = ExtResource("2_yuyln")
-region = Rect2(65, 288, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_p4dr1"]
-atlas = ExtResource("2_yuyln")
-region = Rect2(33, 288, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_60nai"]
 atlas = ExtResource("2_yuyln")
@@ -149,6 +149,26 @@ region = Rect2(33, 96, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_p4dr1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rbjrt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f66rs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ngvqo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_84r7q")
+}],
+"loop": true,
+"name": &"duck",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_801ts")
 }, {
 "duration": 1.0,
@@ -205,26 +225,6 @@ animations = [{
 }],
 "loop": true,
 "name": &"kick",
-"speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_84r7q")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ngvqo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_f66rs")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rbjrt")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_p4dr1")
-}],
-"loop": true,
-"name": &"rise",
 "speed": 10.0
 }, {
 "frames": [{
@@ -299,13 +299,10 @@ script = ExtResource("1_61rj5")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(4, -8)
 sprite_frames = SubResource("SpriteFrames_uau5j")
-animation = &"walk"
+animation = &"duck"
 autoplay = "idle"
-frame = 1
-frame_progress = 0.795354
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(0, -5)
 shape = SubResource("CircleShape2D_d2f7q")
 

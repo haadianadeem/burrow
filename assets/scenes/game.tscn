@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://ct3ql8cvhu85u"]
+[gd_scene load_steps=43 format=3 uid="uid://ct3ql8cvhu85u"]
 
 [ext_resource type="Texture2D" uid="uid://dklqd6bqahttj" path="res://assets/sprites/world_tileset.png" id="1_p1ssu"]
 [ext_resource type="PackedScene" uid="uid://cv6d6gu7xlp3y" path="res://assets/scenes/player.tscn" id="1_pc1ne"]
@@ -669,22 +669,6 @@ required_quantity = 0
 collected_quantity = 0
 is_completed = false
 
-[sub_resource type="Resource" id="Resource_5ytqn"]
-script = ExtResource("16_xosfk")
-id = "obj_collect_01"
-description = "collect 5 flames"
-target_id = "item_flame"
-target_type = "collection"
-objective_dialogue = ""
-required_quantity = 0
-collected_quantity = 0
-is_completed = false
-
-[sub_resource type="Resource" id="Resource_k2ndo"]
-script = ExtResource("17_h3a8t")
-reward_type = "coins"
-reward_amount = 1
-
 [sub_resource type="Resource" id="Resource_sxiux"]
 script = ExtResource("15_43dkb")
 quest_id = "npc_quest_01"
@@ -692,8 +676,8 @@ quest_name = "Suzy Songbird"
 quest_description = "Find Suzy the Songbird and talk to her."
 state = "not_started"
 unlock_id = "npc_1_1"
-objectives = Array[ExtResource("16_xosfk")]([SubResource("Resource_u2emx"), SubResource("Resource_5ytqn")])
-rewards = Array[ExtResource("17_h3a8t")]([SubResource("Resource_k2ndo")])
+objectives = Array[ExtResource("16_xosfk")]([SubResource("Resource_u2emx")])
+rewards = Array[ExtResource("17_h3a8t")]([])
 
 [sub_resource type="Resource" id="Resource_cohj0"]
 script = ExtResource("16_xosfk")
@@ -811,6 +795,9 @@ libraries = {
 }
 autoplay = "move"
 
+[node name="Platform10" parent="Platforms" instance=ExtResource("3_rcovd")]
+position = Vector2(3536, -180)
+
 [node name="Slime5" parent="." instance=ExtResource("6_8w8od")]
 position = Vector2(641, 93)
 
@@ -871,8 +858,40 @@ position = Vector2(1452, -59)
 item_id = "item_flame"
 item_icon = ExtResource("19_y1q2f")
 
-[node name="Platform" parent="." instance=ExtResource("3_rcovd")]
-position = Vector2(3536, -180)
+[node name="flame_2" parent="Quest Items" instance=ExtResource("15_mideu")]
+position = Vector2(1517, -26)
+item_id = "item_flame"
+item_icon = ExtResource("19_y1q2f")
+
+[node name="flame_3" parent="Quest Items" instance=ExtResource("15_mideu")]
+position = Vector2(1544, -25)
+item_id = "item_flame"
+item_icon = ExtResource("19_y1q2f")
+
+[node name="flame_4" parent="Quest Items" instance=ExtResource("15_mideu")]
+position = Vector2(1576, -26)
+item_id = "item_flame"
+item_icon = ExtResource("19_y1q2f")
+
+[node name="flame_5" parent="Quest Items" instance=ExtResource("15_mideu")]
+position = Vector2(1604, -25)
+item_id = "item_flame"
+item_icon = ExtResource("19_y1q2f")
+
+[node name="flame_6" parent="Quest Items" instance=ExtResource("15_mideu")]
+position = Vector2(1632, 7)
+item_id = "item_flame"
+item_icon = ExtResource("19_y1q2f")
+
+[node name="flame_7" parent="Quest Items" instance=ExtResource("15_mideu")]
+position = Vector2(1665, 24)
+item_id = "item_flame"
+item_icon = ExtResource("19_y1q2f")
+
+[node name="flame_8" parent="Quest Items" instance=ExtResource("15_mideu")]
+position = Vector2(1731, 88)
+item_id = "item_flame"
+item_icon = ExtResource("19_y1q2f")
 
 [node name="Checkpoints" type="Node" parent="."]
 
