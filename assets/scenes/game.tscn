@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://ct3ql8cvhu85u"]
+[gd_scene load_steps=45 format=3 uid="uid://ct3ql8cvhu85u"]
 
 [ext_resource type="Texture2D" uid="uid://dklqd6bqahttj" path="res://assets/sprites/world_tileset.png" id="1_p1ssu"]
 [ext_resource type="PackedScene" uid="uid://cv6d6gu7xlp3y" path="res://assets/scenes/player.tscn" id="1_pc1ne"]
@@ -664,10 +664,26 @@ id = "npc_talk_01"
 description = "Find Suzy Songbird"
 target_id = "npc_2"
 target_type = "talk_to"
-objective_dialog = "Help me!"
+objective_dialogue = ""
 required_quantity = 0
 collected_quantity = 0
 is_completed = false
+
+[sub_resource type="Resource" id="Resource_5ytqn"]
+script = ExtResource("16_xosfk")
+id = "obj_collect_01"
+description = "collect 5 flames"
+target_id = "item_flame"
+target_type = "collection"
+objective_dialogue = ""
+required_quantity = 0
+collected_quantity = 0
+is_completed = false
+
+[sub_resource type="Resource" id="Resource_k2ndo"]
+script = ExtResource("17_h3a8t")
+reward_type = "coins"
+reward_amount = 1
 
 [sub_resource type="Resource" id="Resource_sxiux"]
 script = ExtResource("15_43dkb")
@@ -676,8 +692,34 @@ quest_name = "Suzy Songbird"
 quest_description = "Find Suzy the Songbird and talk to her."
 state = "not_started"
 unlock_id = "npc_1_1"
-objectives = Array[ExtResource("16_xosfk")]([SubResource("Resource_u2emx")])
-rewards = Array[ExtResource("17_h3a8t")]([])
+objectives = Array[ExtResource("16_xosfk")]([SubResource("Resource_u2emx"), SubResource("Resource_5ytqn")])
+rewards = Array[ExtResource("17_h3a8t")]([SubResource("Resource_k2ndo")])
+
+[sub_resource type="Resource" id="Resource_cohj0"]
+script = ExtResource("16_xosfk")
+id = "obj_collect_01"
+description = "Collect 8 flames"
+target_id = "item_flame"
+target_type = "collection"
+objective_dialogue = ""
+required_quantity = 8
+collected_quantity = 0
+is_completed = false
+
+[sub_resource type="Resource" id="Resource_2pfky"]
+script = ExtResource("17_h3a8t")
+reward_type = "coins"
+reward_amount = 1
+
+[sub_resource type="Resource" id="Resource_knx2m"]
+script = ExtResource("15_43dkb")
+quest_id = "npc_2_quest_1"
+quest_name = "Melt the Ice"
+quest_description = "Find 8 flames to help melt the ice trapping Suzy"
+state = "not_started"
+unlock_id = "npc_2_1"
+objectives = Array[ExtResource("16_xosfk")]([SubResource("Resource_cohj0")])
+rewards = Array[ExtResource("17_h3a8t")]([SubResource("Resource_2pfky")])
 
 [node name="Game" type="Node2D"]
 
@@ -820,27 +862,13 @@ quests = Array[ExtResource("15_43dkb")]([SubResource("Resource_sxiux")])
 
 [node name="songbird" parent="." instance=ExtResource("20_lkxje")]
 position = Vector2(388, 59)
+quests = Array[ExtResource("15_43dkb")]([SubResource("Resource_knx2m")])
 
 [node name="Quest Items" type="Node" parent="."]
 
-[node name="QuestItem3" parent="Quest Items" instance=ExtResource("15_mideu")]
-position = Vector2(2857, -117)
-item_icon = ExtResource("19_y1q2f")
-
-[node name="QuestItem2" parent="Quest Items" instance=ExtResource("15_mideu")]
-position = Vector2(2609, -57)
-item_icon = ExtResource("19_y1q2f")
-
-[node name="QuestItem4" parent="Quest Items" instance=ExtResource("15_mideu")]
-position = Vector2(2792, -227)
-item_icon = ExtResource("19_y1q2f")
-
-[node name="QuestItem5" parent="Quest Items" instance=ExtResource("15_mideu")]
-position = Vector2(3315, -173)
-item_icon = ExtResource("19_y1q2f")
-
-[node name="QuestItem6" parent="Quest Items" instance=ExtResource("15_mideu")]
-position = Vector2(3259, -316)
+[node name="flame_1" parent="Quest Items" instance=ExtResource("15_mideu")]
+position = Vector2(1452, -59)
+item_id = "item_flame"
 item_icon = ExtResource("19_y1q2f")
 
 [node name="Platform" parent="." instance=ExtResource("3_rcovd")]
