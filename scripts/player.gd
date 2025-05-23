@@ -52,19 +52,6 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_just_pressed("jump") and is_on_floor():
 			velocity.y = JUMP_VELOCITY
 			
-		# Handle ducking
-		if is_on_floor() and Input.is_action_pressed("duck"):
-			if current_animation != "duck":
-				current_animation = "duck"
-				animated_sprite.animation = "duck"
-				animated_sprite.stop()
-				animated_sprite.frame = animated_sprite.sprite_frames.get_frame_count("duck") - 1
-			velocity.x = 0
-			current_speed = 0
-			return  # Skip the rest of movement logic while ducking
-
-
-
 		# Movement (left/right)
 		var direction_1 := Input.get_axis("move_left", "move_right")
 		
