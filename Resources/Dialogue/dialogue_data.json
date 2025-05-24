@@ -199,5 +199,81 @@
 				]
 			}
 		]
+	},
+	"npc_3": {
+		"trees": [
+			{
+				"branch_id": "npc_3_1",
+				"dialogues": [
+					{
+						"state": "start",
+						"text": "Bobby! Bobby, can you hear me?",
+						"options": {
+							"Ask What's Wrong": "in_progress",
+							"Offer to Help": "give_quests",
+							"Say Goodbye": "exit"
+						}
+					},
+					{
+						"state": "in_progress",
+						"text": "My baby bunny, Bobby, fell and got trapped underground. I hurt my leg and can't get him.",
+						"options": {
+							"Offer to Help": "give_quests",
+							"Say Goodbye": "end",
+							"Go Back": "start"
+						}
+					},
+					{
+						"state": "give_quests",
+						"text": "Really?! If you could bring my baby back, I would be beyond grateful!",
+						"options": {
+							"Say Goodbye": "exit",
+							"Go Back": "start"
+						}
+					},
+					{
+						"state": "end",
+						"text": "I hope you can help!",
+						"options": {}
+					},
+					{
+						"state": "exit",
+						"text": "Thank you for your help!",
+						"options": {}
+					}
+				]
+			},
+			{
+			"branch_id": "npc_default",
+				"dialogues": [
+					{
+						"state": "start",
+						"text": "I need help getting Bobby back, please!",
+						"options": {
+							"Offer to Help": "give_quests",
+							"Say Goodbye": "exit"
+						}
+					},
+					{
+						"state": "give_quests",
+						"text": "He must be down there somewhere. Check your quest log!",
+						"options": {
+							"Go Back": "start",
+							"Say Goodbye": "end"
+						}
+					},
+					{
+						"state": "end",
+						"text": "I hope you can help!",
+						"options": {}
+					},
+					{
+						"state": "exit",
+						"text": "Thank you for your help!",
+						"options": {}
+					},
+				]
+			}
+		]
 	}
 }
