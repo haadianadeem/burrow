@@ -81,8 +81,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8k135"]
-radius = 3.0
-height = 12.0
+radius = 6.0
+height = 16.0
 
 [node name="squirrel" type="Area2D" groups=["NPC"]]
 script = ExtResource("1_ukpnh")
@@ -92,6 +92,7 @@ dialogue_resource = SubResource("Resource_ts6ei")
 quests = Array[ExtResource("3_1y2vt")]([SubResource("Resource_mirye")])
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -7)
 sprite_frames = SubResource("SpriteFrames_brnmo")
 animation = &"idle"
 autoplay = "idle"
@@ -99,8 +100,7 @@ frame = 3
 frame_progress = 0.659203
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(0, 2)
+position = Vector2(0, -6)
 shape = SubResource("CapsuleShape2D_8k135")
 
 [node name="DialogueManager" parent="." instance=ExtResource("4_28mbf")]

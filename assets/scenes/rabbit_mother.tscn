@@ -1,0 +1,69 @@
+[gd_scene load_steps=12 format=3 uid="uid://c4v6oo0wiu2cf"]
+
+[ext_resource type="Script" path="res://scripts/rabbit_mother.gd" id="1_6xu8e"]
+[ext_resource type="Texture2D" uid="uid://55c4wpnf7ofx" path="res://assets/sprites/BouncingRabbit.png" id="1_7sejr"]
+[ext_resource type="Script" path="res://Resources/Dialogue/Dialogue.gd" id="2_v5obj"]
+[ext_resource type="PackedScene" uid="uid://dsfxbmt54dote" path="res://assets/scenes/Dialogue/dialogue_manager.tscn" id="3_imcd5"]
+
+[sub_resource type="Resource" id="Resource_vwvdu"]
+script = ExtResource("2_v5obj")
+dialogues = {}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_73dly"]
+radius = 8.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qftch"]
+atlas = ExtResource("1_7sejr")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w0x7t"]
+atlas = ExtResource("1_7sejr")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bo3os"]
+atlas = ExtResource("1_7sejr")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ikdrn"]
+atlas = ExtResource("1_7sejr")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xnmse"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qftch")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w0x7t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bo3os")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ikdrn")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 6.0
+}]
+
+[node name="rabbit_mother" type="Area2D" groups=["NPC"]]
+script = ExtResource("1_6xu8e")
+npc_id = "npc_3"
+npc_name = "Rory Rabbit"
+dialogue_resource = SubResource("Resource_vwvdu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4)
+shape = SubResource("CircleShape2D_73dly")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -6)
+sprite_frames = SubResource("SpriteFrames_xnmse")
+animation = &"idle"
+autoplay = "idle"
+frame = 2
+frame_progress = 0.17201
+
+[node name="DialogueManager" parent="." instance=ExtResource("3_imcd5")]

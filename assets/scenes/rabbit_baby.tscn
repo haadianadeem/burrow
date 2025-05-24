@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://ccl3s7lx68osa"]
+
+[ext_resource type="Texture2D" uid="uid://c63hxhkppftj7" path="res://assets/sprites/MiniBunny.png" id="1_ptri4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7q04t"]
+radius = 8.06226
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ximda"]
+atlas = ExtResource("1_ptri4")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5veid"]
+atlas = ExtResource("1_ptri4")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d86g2"]
+atlas = ExtResource("1_ptri4")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8pwiu"]
+atlas = ExtResource("1_ptri4")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_37qja"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ximda")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5veid")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d86g2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8pwiu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[node name="rabbit_baby" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2)
+shape = SubResource("CircleShape2D_7q04t")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -13)
+sprite_frames = SubResource("SpriteFrames_37qja")
+frame = 1
+frame_progress = 0.168189
