@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://ct3ql8cvhu85u"]
+[gd_scene load_steps=49 format=3 uid="uid://ct3ql8cvhu85u"]
 
 [ext_resource type="Texture2D" uid="uid://dklqd6bqahttj" path="res://assets/sprites/world_tileset.png" id="1_p1ssu"]
 [ext_resource type="PackedScene" uid="uid://cv6d6gu7xlp3y" path="res://assets/scenes/player.tscn" id="1_pc1ne"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://4kq1vvud7svx" path="res://assets/sprites/_Complete_static_BG_(288 x 208).png" id="7_wyoqk"]
 [ext_resource type="PackedScene" uid="uid://cnns62o2uxejt" path="res://assets/scenes/squirrel.tscn" id="9_xcxvo"]
 [ext_resource type="Script" path="res://Resources/Dialogue/Dialogue.gd" id="14_cyoks"]
+[ext_resource type="Texture2D" uid="uid://ctpoewq6nfeoj" path="res://assets/sprites/mini bunny icon.png" id="15_3xdmf"]
 [ext_resource type="Script" path="res://Resources/Quest/Quests.gd" id="15_43dkb"]
 [ext_resource type="PackedScene" uid="uid://mpnkukisa25w" path="res://assets/scenes/QuestItem.tscn" id="15_mideu"]
 [ext_resource type="Script" path="res://Resources/Quest/Objectives.gd" id="16_xosfk"]
@@ -717,6 +718,38 @@ unlock_id = "npc_2_1"
 objectives = Array[ExtResource("16_xosfk")]([SubResource("Resource_cohj0"), SubResource("Resource_cpy80")])
 rewards = Array[ExtResource("17_h3a8t")]([SubResource("Resource_2pfky")])
 
+[sub_resource type="Resource" id="Resource_11s2i"]
+script = ExtResource("16_xosfk")
+id = "obj_collect_02"
+description = "Find Bobby and bring him back."
+target_id = "item_bunny"
+target_type = "collection"
+objective_dialogue = ""
+required_quantity = 1
+collected_quantity = 0
+is_completed = false
+
+[sub_resource type="Resource" id="Resource_5gp6q"]
+script = ExtResource("16_xosfk")
+id = "talk_to_02"
+description = "Bring Bobby back to Rory Rabbit."
+target_id = "npc_3"
+target_type = "talk_to"
+objective_dialogue = "You found him! Thank you so much! I found some kind of potion in the forest earlier. I think you shoud have it, as a thank you. "
+required_quantity = 0
+collected_quantity = 0
+is_completed = false
+
+[sub_resource type="Resource" id="Resource_nbouv"]
+script = ExtResource("15_43dkb")
+quest_id = "npc_3_quest_1"
+quest_name = "Bring Bobby Back"
+quest_description = "Find Rory Rabbit's child, Bobby, and reunite them. "
+state = "not_started"
+unlock_id = "npc_3_1"
+objectives = Array[ExtResource("16_xosfk")]([SubResource("Resource_11s2i"), SubResource("Resource_5gp6q")])
+rewards = Array[ExtResource("17_h3a8t")]([])
+
 [node name="Game" type="Node2D"]
 
 [node name="GameManager" type="Node" parent="."]
@@ -882,7 +915,7 @@ item_id = "item_flame"
 item_icon = ExtResource("19_y1q2f")
 
 [node name="flame_6" parent="Quest Items" instance=ExtResource("15_mideu")]
-position = Vector2(1632, 7)
+position = Vector2(1647, 11)
 item_id = "item_flame"
 item_icon = ExtResource("19_y1q2f")
 
@@ -892,9 +925,14 @@ item_id = "item_flame"
 item_icon = ExtResource("19_y1q2f")
 
 [node name="flame_8" parent="Quest Items" instance=ExtResource("15_mideu")]
-position = Vector2(1731, 88)
+position = Vector2(1735, 75)
 item_id = "item_flame"
 item_icon = ExtResource("19_y1q2f")
+
+[node name="bunny" parent="Quest Items" instance=ExtResource("15_mideu")]
+position = Vector2(1769, 79)
+item_id = "item_bunny"
+item_icon = ExtResource("15_3xdmf")
 
 [node name="Checkpoints" type="Node" parent="."]
 
@@ -903,6 +941,9 @@ position = Vector2(370, 63)
 
 [node name="Checkpoint2" parent="Checkpoints" instance=ExtResource("22_7jhd0")]
 position = Vector2(577, 64)
+
+[node name="Checkpoint3" parent="Checkpoints" instance=ExtResource("22_7jhd0")]
+position = Vector2(1797, 95)
 
 [node name="NPCs" type="Node" parent="."]
 
@@ -917,3 +958,4 @@ quests = Array[ExtResource("15_43dkb")]([SubResource("Resource_knx2m")])
 
 [node name="rabbit_mother" parent="NPCs" instance=ExtResource("22_vnm1j")]
 position = Vector2(166, 12)
+quests = Array[ExtResource("15_43dkb")]([SubResource("Resource_nbouv")])
