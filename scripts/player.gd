@@ -32,6 +32,7 @@ var coin_amount = 0
 
 func _ready():
 	Global.player = self
+	add_to_group("player")
 	respawn_position = global_position
 	quest_tracker.visible = false
 	update_coins()
@@ -235,6 +236,9 @@ func _on_objective_updated(quest_id: String, objective_id: String):
 		update_quest_tracker(selected_quest)
 	selected_quest = null
 	
+func boost_jump(boost_strength: float):
+	velocity.y = -boost_strength
+
 	
 	
 	
