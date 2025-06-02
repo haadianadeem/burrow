@@ -149,12 +149,12 @@ func _input(event):
 					can_move = false
 					target.start_dialog()
 					check_quest_objectives(target.npc_id, "talk_to")
-				elif target.is_in_group("Item"):
-					if is_item_needed(target.item_id):
-						check_quest_objectives(target.item_id, "collection", target.item_quantity)
-						target.queue_free()
-					else: 
-						print("Item not needed for any active quest.")
+				#elif target.is_in_group("Item"):
+					#if is_item_needed(target.item_id):
+					#	check_quest_objectives(target.item_id, "collection", target.item_quantity)
+					#	target.queue_free()
+					#else: 
+					#	print("Item not needed for any active quest.")
 	# Open/close quest log
 		if event.is_action_pressed("ui_quest_menu"):
 			quest_manager.show_hide_log()
