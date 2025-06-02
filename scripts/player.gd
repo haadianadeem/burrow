@@ -33,7 +33,9 @@ var coin_amount = 0
 func _ready():
 	Global.player = self
 	add_to_group("player")
-	respawn_position = global_position
+	var spawn_point = $"../StartSpawn"
+	$".".global_position = spawn_point.global_position
+	#respawn_position = global_position
 	quest_tracker.visible = false
 	update_coins()
 
