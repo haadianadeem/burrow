@@ -1,0 +1,92 @@
+[gd_scene load_steps=17 format=3 uid="uid://ccl3s7lx68osa"]
+
+[ext_resource type="Texture2D" uid="uid://b7u66b4f0hx3b" path="res://assets/sprites/MeowingCat.png" id="1_31lau"]
+[ext_resource type="Script" path="res://scripts/tutorial_npc.gd" id="1_e2cbg"]
+[ext_resource type="Script" path="res://Resources/Dialogue/Dialogue.gd" id="2_keirp"]
+[ext_resource type="Script" path="res://Resources/Quest/Quests.gd" id="3_1h51o"]
+[ext_resource type="Script" path="res://Resources/Quest/Objectives.gd" id="4_t5lgm"]
+[ext_resource type="Script" path="res://Resources/Quest/Rewards.gd" id="5_vhaoi"]
+[ext_resource type="PackedScene" uid="uid://dsfxbmt54dote" path="res://assets/scenes/Dialogue/dialogue_manager.tscn" id="7_n3420"]
+
+[sub_resource type="Resource" id="Resource_tsm8a"]
+script = ExtResource("2_keirp")
+dialogues = {}
+
+[sub_resource type="Resource" id="Resource_m8lvy"]
+script = ExtResource("4_t5lgm")
+id = "obj_collect_0"
+description = "Collect the mystery box."
+target_id = "item_mystery"
+target_type = "collection"
+objective_dialogue = ""
+required_quantity = 1
+collected_quantity = 0
+is_completed = false
+
+[sub_resource type="Resource" id="Resource_g3qs2"]
+script = ExtResource("3_1h51o")
+quest_id = "npc_0_quest_1"
+quest_name = "Collect an Item"
+quest_description = "Get practice with collecting items. "
+state = "not_started"
+unlock_id = "npc_0_1"
+objectives = Array[ExtResource("4_t5lgm")]([SubResource("Resource_m8lvy")])
+rewards = Array[ExtResource("5_vhaoi")]([])
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7q04t"]
+radius = 8.06226
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_807mn"]
+atlas = ExtResource("1_31lau")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m53pg"]
+atlas = ExtResource("1_31lau")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gk76f"]
+atlas = ExtResource("1_31lau")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5qne1"]
+atlas = ExtResource("1_31lau")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_37qja"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_807mn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m53pg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gk76f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5qne1")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 6.0
+}]
+
+[node name="tutorial_NPC" type="Area2D" groups=["NPC"]]
+script = ExtResource("1_e2cbg")
+npc_id = "npc_0"
+npc_name = "Carl Cat"
+dialogue_resource = SubResource("Resource_tsm8a")
+quests = Array[ExtResource("3_1h51o")]([SubResource("Resource_g3qs2")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -7)
+shape = SubResource("CircleShape2D_7q04t")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -10)
+sprite_frames = SubResource("SpriteFrames_37qja")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="DialogueManager" parent="." instance=ExtResource("7_n3420")]

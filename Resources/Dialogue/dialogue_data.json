@@ -1,4 +1,81 @@
 {
+	"npc_0": {
+		"trees": [
+			{
+				"branch_id": "npc_0_1",
+				"dialogues": [
+					{
+						"state": "start",
+						"text": "Hi! I'm Carl. Try talking to me, or receiving a quest.",
+						"options": {
+							"Talk to Carl": "in_progress",
+							"Receive Quest": "give_quests",
+							"Say Goodbye": "exit"
+						}
+					},
+					{
+						"state": "in_progress",
+						"text": "When you'll talk to other NPCs, they will tell you what's wrong.",
+						"options": {
+							"Receive Quest": "give_quests",
+							"Say Goodbye": "end",
+							"Go Back": "start"
+						}
+					},
+					{
+						"state": "give_quests",
+						"text": "Press 'Q' to view your quest log. Click on the quest to see what you need to do.",
+						"options": {
+							"Say Goodbye": "exit",
+							"Go Back": "start"
+						}
+					},
+					{
+						"state": "end",
+						"text": "Have fun!",
+						"options": {}
+					},
+					{
+						"state": "exit",
+						"text": "Have fun!",
+						"options": {}
+					}
+				]
+			},
+			{
+			"branch_id": "npc_default",
+				"dialogues": [
+					{
+						"state": "start",
+						"text": "Get started with a practice quest.",
+						"options": {
+							"Offer to Help": "give_quests",
+							"Say Goodbye": "exit"
+						}
+					},
+					{
+						"state": "give_quests",
+						"text": "Press 'Q' to view your quest log. Click on the quest to see what you need to do.",
+						"options": {
+							"Go Back": "start",
+							"Say Goodbye": "end"
+						}
+					},
+					{
+						"state": "end",
+						"text": "Have fun!",
+						"options": {}
+					},
+					{
+						"state": "exit",
+						"text": "Have fun!",
+						"options": {}
+					},
+				]
+			}
+		]
+	},
+	
 	"npc_1": {
 		"trees": [
 			{
