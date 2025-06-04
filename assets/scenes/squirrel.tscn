@@ -82,7 +82,7 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8k135"]
 radius = 6.0
-height = 16.0
+height = 26.0
 
 [node name="squirrel" type="Area2D" groups=["NPC"]]
 script = ExtResource("1_ukpnh")

@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cup3ygbebky5d"]
+[gd_scene load_steps=5 format=3 uid="uid://cup3ygbebky5d"]
 
 [ext_resource type="Script" path="res://scripts/DialogueUI.gd" id="1_lplb7"]
+[ext_resource type="FontFile" uid="uid://bcn6t1qnim4cl" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_cw7mj"]
+[ext_resource type="FontFile" uid="uid://dvy8lsh1i4vl7" path="res://assets/fonts/PixelOperator8.ttf" id="3_cri67"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eba6e"]
 bg_color = Color(0.141176, 0.431373, 0.74902, 1)
@@ -44,7 +46,7 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 10.0
-offset_top = 10.0
+offset_top = 15.0
 offset_right = -10.0
 offset_bottom = -10.0
 grow_horizontal = 2
@@ -54,13 +56,15 @@ theme_override_constants/separation = 15
 [node name="DialogueSpeaker" type="Label" parent="CanvasLayer/Panel/DialogueBox"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.603781, 0.839268, 0.95269, 1)
-theme_override_font_sizes/font_size = 20
+theme_override_fonts/font = ExtResource("2_cw7mj")
+theme_override_font_sizes/font_size = 26
 text = "Scotty Squirrel"
 horizontal_alignment = 1
 
 [node name="DialogueText" type="Label" parent="CanvasLayer/Panel/DialogueBox"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_cri67")
 theme_override_font_sizes/font_size = 23
 text = "Dialogue text... super duper long dialogue text that goes way beyond just one line of text. what does that look like"
 horizontal_alignment = 1

@@ -49,7 +49,7 @@
 						"state": "start",
 						"text": "Get started with a practice quest.",
 						"options": {
-							"Offer to Help": "give_quests",
+							"Receive Quest": "give_quests",
 							"Say Goodbye": "exit"
 						}
 					},
