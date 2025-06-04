@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://ct3ql8cvhu85u"]
+[gd_scene load_steps=77 format=3 uid="uid://ct3ql8cvhu85u"]
 
 [ext_resource type="Texture2D" uid="uid://dklqd6bqahttj" path="res://assets/sprites/world_tileset.png" id="1_p1ssu"]
 [ext_resource type="PackedScene" uid="uid://cv6d6gu7xlp3y" path="res://assets/scenes/player.tscn" id="1_pc1ne"]
@@ -31,6 +31,7 @@
 [ext_resource type="PackedScene" uid="uid://c4v6oo0wiu2cf" path="res://assets/scenes/rabbit_mother.tscn" id="22_vnm1j"]
 [ext_resource type="PackedScene" uid="uid://ccl3s7lx68osa" path="res://assets/scenes/tutorial_NPC.tscn" id="28_2t31q"]
 [ext_resource type="PackedScene" uid="uid://msm3v7ntddg0" path="res://assets/scenes/spike.tscn" id="29_4xn3c"]
+[ext_resource type="PackedScene" uid="uid://ckua66l0c0xad" path="res://assets/scenes/main_menu.tscn" id="32_ol8em"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_i5n5i"]
 font = ExtResource("2_fxj4u")
@@ -1205,6 +1206,8 @@ objectives = Array[ExtResource("16_xosfk")]([SubResource("Resource_11s2i"), SubR
 rewards = Array[ExtResource("17_h3a8t")]([])
 
 [node name="Game" type="Node2D"]
+
+[node name="Main Menu" parent="." instance=ExtResource("32_ol8em")]
 
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true

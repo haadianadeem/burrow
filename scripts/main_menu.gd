@@ -1,4 +1,4 @@
-extends Node2D
+extends Control 
 
 
 # Called when the node enters the scene tree for the first time.
@@ -12,7 +12,8 @@ func _process(delta: float) -> void:
 
 
 func _on_start_pressed() -> void:
-	get_tree().change_scene_to_file("res://assets/scenes/game.tscn")
+	self.queue_free()
+
 
 
 func _on_quit_pressed() -> void:
