@@ -1310,13 +1310,13 @@ libraries = {
 autoplay = "move"
 
 [node name="Platform13" parent="Platforms" instance=ExtResource("3_rcovd")]
-position = Vector2(4507, -516)
+position = Vector2(4507, -507)
 
 [node name="Platform30" parent="Platforms" instance=ExtResource("3_rcovd")]
-position = Vector2(4438, -486)
+position = Vector2(4438, -475)
 
 [node name="Platform31" parent="Platforms" instance=ExtResource("3_rcovd")]
-position = Vector2(4575, -486)
+position = Vector2(4575, -475)
 
 [node name="Platform14" parent="Platforms" instance=ExtResource("3_rcovd")]
 position = Vector2(4426, -418)
@@ -1647,6 +1647,12 @@ position = Vector2(4529, -449)
 
 [node name="spike6" parent="spikes" instance=ExtResource("29_4xn3c")]
 position = Vector2(4408, -420)
+
+[node name="spike30" parent="spikes" instance=ExtResource("29_4xn3c")]
+position = Vector2(4447, -420)
+
+[node name="spike31" parent="spikes" instance=ExtResource("29_4xn3c")]
+position = Vector2(4571, -420)
 
 [node name="spike7" parent="spikes" instance=ExtResource("29_4xn3c")]
 position = Vector2(4392, -420)
