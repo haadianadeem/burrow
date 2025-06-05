@@ -1,0 +1,119 @@
+[gd_scene load_steps=8 format=3 uid="uid://yi1mr10ux7jh"]
+
+[ext_resource type="Texture2D" uid="uid://4kq1vvud7svx" path="res://assets/sprites/_Complete_static_BG_(288 x 208).png" id="1_iqgun"]
+[ext_resource type="FontFile" uid="uid://bcn6t1qnim4cl" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_fncg8"]
+[ext_resource type="Texture2D" uid="uid://dk64mdh1h247x" path="res://Buttons/menu_bg.png" id="3_dvs1a"]
+[ext_resource type="FontFile" uid="uid://dvy8lsh1i4vl7" path="res://assets/fonts/PixelOperator8.ttf" id="4_15gay"]
+[ext_resource type="Texture2D" uid="uid://cokelutou0k8p" path="res://Buttons/plain_button_normal.png" id="5_6281y"]
+[ext_resource type="Texture2D" uid="uid://cnqq3oyxnkuuy" path="res://Buttons/plain_button_pressed.png" id="6_1hpl6"]
+[ext_resource type="Texture2D" uid="uid://3fi7duor7kh2" path="res://Buttons/plain_button_hover.png" id="7_qf8ur"]
+
+[node name="IntroScreen2" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Background" type="TextureRect" parent="CanvasLayer"]
+offset_right = 590.0
+offset_bottom = 365.0
+scale = Vector2(1.957, 1.957)
+texture = ExtResource("1_iqgun")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 405.0
+offset_top = 39.0
+offset_right = 797.0
+offset_bottom = 103.0
+theme_override_colors/font_color = Color(0.0705882, 0.215686, 0.376471, 1)
+theme_override_fonts/font = ExtResource("2_fncg8")
+theme_override_font_sizes/font_size = 64
+text = "Burrow"
+metadata/_edit_use_anchors_ = true
+
+[node name="MenuBackground" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 444.0
+offset_top = -528.0
+offset_right = 829.0
+offset_bottom = -2.0
+grow_vertical = 0
+scale = Vector2(0.840909, 0.808743)
+texture = ExtResource("3_dvs1a")
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
+offset_left = 474.0
+offset_top = 214.0
+offset_right = 744.0
+offset_bottom = 523.0
+theme_override_constants/table_v_separation = 0
+theme_override_constants/line_separation = 5
+theme_override_fonts/normal_font = ExtResource("4_15gay")
+theme_override_fonts/bold_font = ExtResource("2_fncg8")
+theme_override_font_sizes/normal_font_size = 16
+text = "One winter, Gary stepped out of his burrow to see that it was still cold and snowy outside. No worries - this just meant that he had to wait 6 more weeks for spring. 
+
+Except..."
+metadata/_edit_use_anchors_ = true
+
+[node name="Continue" type="TextureButton" parent="CanvasLayer"]
+offset_left = 594.0
+offset_top = 482.0
+offset_right = 786.0
+offset_bottom = 578.0
+texture_normal = ExtResource("5_6281y")
+texture_pressed = ExtResource("6_1hpl6")
+texture_hover = ExtResource("7_qf8ur")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="CanvasLayer/Continue"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_15gay")
+text = "CONTINUE"
+metadata/_edit_use_anchors_ = true
+
+[node name="Continue2" type="TextureButton" parent="CanvasLayer"]
+offset_left = 425.0
+offset_top = 482.0
+offset_right = 617.0
+offset_bottom = 578.0
+texture_normal = ExtResource("5_6281y")
+texture_pressed = ExtResource("6_1hpl6")
+texture_hover = ExtResource("7_qf8ur")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="CanvasLayer/Continue2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_15gay")
+text = "BACK"
+metadata/_edit_use_anchors_ = true
