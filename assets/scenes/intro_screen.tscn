@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://bpxxw08rqaloc"]
+[gd_scene load_steps=9 format=3 uid="uid://bpxxw08rqaloc"]
 
 [ext_resource type="Texture2D" uid="uid://4kq1vvud7svx" path="res://assets/sprites/_Complete_static_BG_(288 x 208).png" id="1_7b8rt"]
+[ext_resource type="Script" path="res://scripts/intro_screen.gd" id="1_hlm2r"]
 [ext_resource type="FontFile" uid="uid://bcn6t1qnim4cl" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_t1o4u"]
 [ext_resource type="Texture2D" uid="uid://dk64mdh1h247x" path="res://Buttons/menu_bg.png" id="3_umiv5"]
 [ext_resource type="FontFile" uid="uid://dvy8lsh1i4vl7" path="res://assets/fonts/PixelOperator8.ttf" id="4_2aebe"]
@@ -15,6 +16,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_hlm2r")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -85,7 +87,7 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("4_2aebe")
 text = "CONTINUE"
 
-[node name="Continue2" type="TextureButton" parent="CanvasLayer"]
+[node name="Back" type="TextureButton" parent="CanvasLayer"]
 offset_left = 425.0
 offset_top = 482.0
 offset_right = 617.0
@@ -94,7 +96,7 @@ texture_normal = ExtResource("5_lojl7")
 texture_pressed = ExtResource("6_n71fu")
 texture_hover = ExtResource("7_uicbe")
 
-[node name="Label" type="Label" parent="CanvasLayer/Continue2"]
+[node name="Label" type="Label" parent="CanvasLayer/Back"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -109,3 +111,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("4_2aebe")
 text = "BACK"
+
+[connection signal="pressed" from="CanvasLayer/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="CanvasLayer/Back" to="." method="_on_back_pressed"]

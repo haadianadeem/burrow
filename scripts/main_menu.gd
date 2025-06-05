@@ -13,9 +13,8 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_start_pressed() -> void:
-	self.queue_free()
-
+func _on_play_pressed() -> void:
+	get_tree().change_scene_to_file("res://assets/scenes/intro_screen.tscn")
 
 
 func _on_quit_pressed() -> void:
