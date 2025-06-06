@@ -59,28 +59,30 @@ scale = Vector2(0.840909, 0.808743)
 texture = ExtResource("3_f0amc")
 metadata/_edit_use_anchors_ = true
 
-[node name="Button_manager" type="Control" parent="CanvasLayer"]
+[node name="Button_manager" type="Control" parent="CanvasLayer/MenuBackground"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -528.0
+offset_top = -148.378
+offset_right = -488.0
+offset_bottom = -108.378
 
-[node name="Play" type="TextureButton" parent="CanvasLayer/Button_manager"]
+[node name="Play" type="TextureButton" parent="CanvasLayer/MenuBackground/Button_manager"]
 layout_mode = 0
-offset_left = 511.0
-offset_top = 248.0
-offset_right = 703.0
-offset_bottom = 344.0
+offset_left = 620.757
+offset_top = 319.014
+offset_right = 812.757
+offset_bottom = 415.014
 texture_normal = ExtResource("2_dpdem")
 texture_pressed = ExtResource("3_4i60r")
 texture_hover = ExtResource("4_vq6ts")
 
-[node name="Exit" type="TextureButton" parent="CanvasLayer/Button_manager"]
+[node name="Exit" type="TextureButton" parent="CanvasLayer/MenuBackground/Button_manager"]
 layout_mode = 0
-offset_left = 511.0
-offset_top = 349.0
-offset_right = 703.0
-offset_bottom = 445.0
+offset_left = 620.757
+offset_top = 420.014
+offset_right = 812.757
+offset_bottom = 516.014
 texture_normal = ExtResource("5_8x86g")
 texture_pressed = ExtResource("6_4farj")
 texture_hover = ExtResource("7_0pnm5")
@@ -91,5 +93,5 @@ layout_mode = 0
 
 [node name="Fade_timer" type="Timer" parent="fade_transition"]
 
-[connection signal="pressed" from="CanvasLayer/Button_manager/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="CanvasLayer/Button_manager/Exit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="CanvasLayer/MenuBackground/Button_manager/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="CanvasLayer/MenuBackground/Button_manager/Exit" to="." method="_on_quit_pressed"]

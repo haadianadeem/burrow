@@ -51,11 +51,12 @@ scale = Vector2(0.840909, 0.808743)
 texture = ExtResource("3_ae4gl")
 metadata/_edit_use_anchors_ = true
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
-offset_left = 474.0
-offset_top = 214.0
-offset_right = 744.0
-offset_bottom = 523.0
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/MenuBackground"]
+offset_left = 35.6757
+offset_top = 116.23
+offset_right = 305.676
+offset_bottom = 425.23
+scale = Vector2(1.1, 1.1)
 theme_override_constants/table_v_separation = 0
 theme_override_constants/line_separation = 5
 theme_override_fonts/normal_font = ExtResource("4_00ckm")
@@ -68,17 +69,23 @@ What's going on?
 Embark on a journey to figure out what's going on, and hopefully find some place warm to rest!"
 metadata/_edit_use_anchors_ = true
 
-[node name="Start" type="TextureButton" parent="CanvasLayer"]
-offset_left = 594.0
-offset_top = 482.0
-offset_right = 786.0
-offset_bottom = 578.0
+[node name="Start" type="TextureButton" parent="CanvasLayer/MenuBackground"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0401544
+anchor_top = -0.0117534
+anchor_right = 0.0401545
+anchor_bottom = -0.0117534
+offset_left = 178.378
+offset_top = 447.608
+offset_right = 370.378
+offset_bottom = 543.608
 texture_normal = ExtResource("5_s8j7k")
 texture_pressed = ExtResource("6_mhmq5")
 texture_hover = ExtResource("7_e3i58")
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="CanvasLayer/Start"]
+[node name="Label" type="Label" parent="CanvasLayer/MenuBackground/Start"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -97,17 +104,23 @@ text = "START
 "
 metadata/_edit_use_anchors_ = true
 
-[node name="Back" type="TextureButton" parent="CanvasLayer"]
-offset_left = 425.0
-offset_top = 482.0
-offset_right = 617.0
-offset_bottom = 578.0
+[node name="Back" type="TextureButton" parent="CanvasLayer/MenuBackground"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0555985
+anchor_top = -0.0117536
+anchor_right = 0.0555985
+anchor_bottom = -0.0117536
+offset_left = -22.5946
+offset_top = 447.608
+offset_right = 169.405
+offset_bottom = 543.608
 texture_normal = ExtResource("5_s8j7k")
 texture_pressed = ExtResource("6_mhmq5")
 texture_hover = ExtResource("7_e3i58")
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="CanvasLayer/Back"]
+[node name="Label" type="Label" parent="CanvasLayer/MenuBackground/Back"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -124,5 +137,5 @@ theme_override_fonts/font = ExtResource("4_00ckm")
 text = "BACK"
 metadata/_edit_use_anchors_ = true
 
-[connection signal="pressed" from="CanvasLayer/Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="CanvasLayer/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="CanvasLayer/MenuBackground/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="CanvasLayer/MenuBackground/Back" to="." method="_on_back_pressed"]

@@ -50,11 +50,12 @@ scale = Vector2(0.840909, 0.808743)
 texture = ExtResource("3_umiv5")
 metadata/_edit_use_anchors_ = true
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
-offset_left = 474.0
-offset_top = 214.0
-offset_right = 744.0
-offset_bottom = 523.0
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/MenuBackground"]
+offset_left = 32.1081
+offset_top = 102.628
+offset_right = 332.108
+offset_bottom = 464.628
+scale = Vector2(1.1, 1.1)
 theme_override_constants/table_v_separation = 0
 theme_override_constants/line_separation = 5
 theme_override_fonts/normal_font = ExtResource("4_2aebe")
@@ -62,16 +63,16 @@ theme_override_fonts/bold_font = ExtResource("2_t1o4u")
 theme_override_font_sizes/normal_font_size = 16
 text = "Once upon a time, there lived a groundhog named Gary deep within the forest. Gary typically kept to himself, not worrying about the other forest critters. His only concern was to live in comfort."
 
-[node name="Continue" type="TextureButton" parent="CanvasLayer"]
-offset_left = 594.0
-offset_top = 482.0
-offset_right = 786.0
-offset_bottom = 578.0
+[node name="Continue" type="TextureButton" parent="CanvasLayer/MenuBackground"]
+offset_left = 193.838
+offset_top = 441.426
+offset_right = 385.838
+offset_bottom = 537.426
 texture_normal = ExtResource("5_lojl7")
 texture_pressed = ExtResource("6_n71fu")
 texture_hover = ExtResource("7_uicbe")
 
-[node name="Label" type="Label" parent="CanvasLayer/Continue"]
+[node name="Label" type="Label" parent="CanvasLayer/MenuBackground/Continue"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -87,16 +88,15 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("4_2aebe")
 text = "CONTINUE"
 
-[node name="Back" type="TextureButton" parent="CanvasLayer"]
-offset_left = 425.0
-offset_top = 482.0
-offset_right = 617.0
-offset_bottom = 578.0
+[node name="Back" type="TextureButton" parent="CanvasLayer/MenuBackground"]
+offset_top = 441.426
+offset_right = 192.0
+offset_bottom = 537.426
 texture_normal = ExtResource("5_lojl7")
 texture_pressed = ExtResource("6_n71fu")
 texture_hover = ExtResource("7_uicbe")
 
-[node name="Label" type="Label" parent="CanvasLayer/Back"]
+[node name="Label" type="Label" parent="CanvasLayer/MenuBackground/Back"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -112,5 +112,5 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("4_2aebe")
 text = "BACK"
 
-[connection signal="pressed" from="CanvasLayer/Continue" to="." method="_on_continue_pressed"]
-[connection signal="pressed" from="CanvasLayer/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="CanvasLayer/MenuBackground/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="CanvasLayer/MenuBackground/Back" to="." method="_on_back_pressed"]
