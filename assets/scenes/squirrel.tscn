@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cnns62o2uxejt"]
+[gd_scene load_steps=19 format=3 uid="uid://cnns62o2uxejt"]
 
 [ext_resource type="Texture2D" uid="uid://duyvhp6jog6et" path="res://assets/sprites/ScroungingSquirrel.png" id="1_qk12n"]
 [ext_resource type="Script" path="res://scripts/squirrel.gd" id="1_ukpnh"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dsfxbmt54dote" path="res://assets/scenes/Dialogue/dialogue_manager.tscn" id="4_28mbf"]
 [ext_resource type="Script" path="res://Resources/Quest/Objectives.gd" id="4_oadun"]
 [ext_resource type="Script" path="res://Resources/Quest/Rewards.gd" id="5_v2xlj"]
+[ext_resource type="FontFile" uid="uid://dvy8lsh1i4vl7" path="res://assets/fonts/PixelOperator8.ttf" id="8_ymek8"]
 
 [sub_resource type="Resource" id="Resource_ts6ei"]
 script = ExtResource("2_itg0j")
@@ -100,7 +101,17 @@ frame = 3
 frame_progress = 0.659203
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, -6)
 shape = SubResource("CapsuleShape2D_8k135")
 
 [node name="DialogueManager" parent="." instance=ExtResource("4_28mbf")]
+
+[node name="Label" type="Label" parent="."]
+offset_left = -5.0
+offset_top = -29.0
+offset_right = 5.0
+offset_bottom = -13.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_ymek8")
+text = "!"

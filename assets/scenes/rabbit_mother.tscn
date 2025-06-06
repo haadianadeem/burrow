@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://c4v6oo0wiu2cf"]
+[gd_scene load_steps=13 format=3 uid="uid://c4v6oo0wiu2cf"]
 
 [ext_resource type="Script" path="res://scripts/rabbit_mother.gd" id="1_6xu8e"]
 [ext_resource type="Texture2D" uid="uid://55c4wpnf7ofx" path="res://assets/sprites/BouncingRabbit.png" id="1_7sejr"]
 [ext_resource type="Script" path="res://Resources/Dialogue/Dialogue.gd" id="2_v5obj"]
 [ext_resource type="PackedScene" uid="uid://dsfxbmt54dote" path="res://assets/scenes/Dialogue/dialogue_manager.tscn" id="3_imcd5"]
+[ext_resource type="FontFile" uid="uid://dvy8lsh1i4vl7" path="res://assets/fonts/PixelOperator8.ttf" id="5_w04jq"]
 
 [sub_resource type="Resource" id="Resource_vwvdu"]
 script = ExtResource("2_v5obj")
@@ -55,6 +56,7 @@ npc_name = "Rory Rabbit"
 dialogue_resource = SubResource("Resource_vwvdu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, -4)
 shape = SubResource("CircleShape2D_73dly")
 
@@ -67,3 +69,12 @@ frame = 2
 frame_progress = 0.17201
 
 [node name="DialogueManager" parent="." instance=ExtResource("3_imcd5")]
+
+[node name="Label" type="Label" parent="."]
+offset_left = -5.0
+offset_top = -29.0
+offset_right = 5.0
+offset_bottom = -13.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_w04jq")
+text = "!"

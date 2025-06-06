@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://ccl3s7lx68osa"]
+[gd_scene load_steps=18 format=3 uid="uid://ccl3s7lx68osa"]
 
 [ext_resource type="Texture2D" uid="uid://b7u66b4f0hx3b" path="res://assets/sprites/MeowingCat.png" id="1_31lau"]
 [ext_resource type="Script" path="res://scripts/tutorial_npc.gd" id="1_e2cbg"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://Resources/Quest/Objectives.gd" id="4_t5lgm"]
 [ext_resource type="Script" path="res://Resources/Quest/Rewards.gd" id="5_vhaoi"]
 [ext_resource type="PackedScene" uid="uid://dsfxbmt54dote" path="res://assets/scenes/Dialogue/dialogue_manager.tscn" id="7_n3420"]
+[ext_resource type="FontFile" uid="uid://dvy8lsh1i4vl7" path="res://assets/fonts/PixelOperator8.ttf" id="8_lo1kt"]
 
 [sub_resource type="Resource" id="Resource_tsm8a"]
 script = ExtResource("2_keirp")
@@ -80,6 +81,7 @@ dialogue_resource = SubResource("Resource_tsm8a")
 quests = Array[ExtResource("3_1h51o")]([SubResource("Resource_g3qs2")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, -7)
 shape = SubResource("CircleShape2D_7q04t")
 
@@ -90,3 +92,12 @@ animation = &"idle"
 autoplay = "idle"
 
 [node name="DialogueManager" parent="." instance=ExtResource("7_n3420")]
+
+[node name="Label" type="Label" parent="."]
+offset_left = -5.0
+offset_top = -29.0
+offset_right = 5.0
+offset_bottom = -13.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_lo1kt")
+text = "!"
