@@ -309,7 +309,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d2f7q"]
-radius = 5.09902
+radius = 7.0
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 z_index = 5
@@ -319,13 +319,11 @@ script = ExtResource("1_61rj5")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(4, -8)
 sprite_frames = SubResource("SpriteFrames_uau5j")
-animation = &"duck"
+animation = &"idle"
 autoplay = "idle"
-frame = 3
-frame_progress = 0.195371
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -5)
+position = Vector2(1, -8)
 shape = SubResource("CircleShape2D_d2f7q")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]

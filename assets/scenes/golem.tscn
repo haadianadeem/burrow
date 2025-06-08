@@ -1,11 +1,83 @@
-[gd_scene load_steps=57 format=3 uid="uid://b6klmabxl5cwe"]
+[gd_scene load_steps=62 format=3 uid="uid://b6klmabxl5cwe"]
 
+[ext_resource type="Script" path="res://scripts/golem.gd" id="1_s3vg3"]
 [ext_resource type="Texture2D" uid="uid://qq64lf8e2lls" path="res://assets/sprites/Golem_1_attack.png" id="1_wl0sb"]
 [ext_resource type="Texture2D" uid="uid://clnqxr4dky3c2" path="res://assets/sprites/Golem_1_die.png" id="2_tjfsf"]
 [ext_resource type="Texture2D" uid="uid://cl5db0ebubit0" path="res://assets/sprites/Golem_1_hurt.png" id="3_kq77k"]
 [ext_resource type="Texture2D" uid="uid://iblar1gxbgip" path="res://assets/sprites/Golem_1_idle.png" id="4_6jmi6"]
 [ext_resource type="Texture2D" uid="uid://bfofup1yyjvdk" path="res://assets/sprites/Golem_1_walk.png" id="5_nx5td"]
 [ext_resource type="PackedScene" uid="uid://cid075sypo2yj" path="res://assets/scenes/killzone.tscn" id="6_nk2qj"]
+
+[sub_resource type="Animation" id="Animation_382ja"]
+resource_name = "attack"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"attack"]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"return_to_patrol"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"activate_killzone"
+}, {
+"args": [],
+"method": &"deactivate_killzone"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_o7hy4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"attack"]
+}
+
+[sub_resource type="Animation" id="Animation_csc3b"]
+resource_name = "walk"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bseja"]
+_data = {
+"RESET": SubResource("Animation_o7hy4"),
+"attack": SubResource("Animation_382ja"),
+"walk": SubResource("Animation_csc3b")
+}
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ibjp2"]
 atlas = ExtResource("1_wl0sb")
@@ -227,7 +299,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_n8j5u")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack",
 "speed": 8.0
 }, {
@@ -361,30 +433,42 @@ animations = [{
 radius = 20.0998
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1hotq"]
-size = Vector2(41, 12)
+size = Vector2(50, 18)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sk2a1"]
 size = Vector2(221, 95)
 
 [node name="Golem" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_s3vg3")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_bseja")
+}
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, -32)
 sprite_frames = SubResource("SpriteFrames_6bget")
-animation = &"idle"
+animation = &"attack"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(1, -15)
 shape = SubResource("CircleShape2D_o6srw")
 
 [node name="Killzone" parent="." instance=ExtResource("6_nk2qj")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
-position = Vector2(17.5, -6)
+position = Vector2(13, -9)
 shape = SubResource("RectangleShape2D_1hotq")
 
 [node name="PlayerDetection" type="Area2D" parent="."]
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
 position = Vector2(8.5, -47.5)
 shape = SubResource("RectangleShape2D_sk2a1")
+
+[connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
+[connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]

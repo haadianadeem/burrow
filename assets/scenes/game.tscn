@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=3 uid="uid://ct3ql8cvhu85u"]
+[gd_scene load_steps=82 format=3 uid="uid://ct3ql8cvhu85u"]
 
 [ext_resource type="Texture2D" uid="uid://dklqd6bqahttj" path="res://assets/sprites/world_tileset.png" id="1_p1ssu"]
 [ext_resource type="PackedScene" uid="uid://cv6d6gu7xlp3y" path="res://assets/scenes/player.tscn" id="1_pc1ne"]
@@ -36,6 +36,7 @@
 [ext_resource type="Texture2D" uid="uid://cnqq3oyxnkuuy" path="res://Buttons/plain_button_pressed.png" id="33_el7tk"]
 [ext_resource type="PackedScene" uid="uid://8fyctq1nlp01" path="res://assets/scenes/ice_spike.tscn" id="33_kue6v"]
 [ext_resource type="Texture2D" uid="uid://3fi7duor7kh2" path="res://Buttons/plain_button_hover.png" id="34_b5xm6"]
+[ext_resource type="PackedScene" uid="uid://b6klmabxl5cwe" path="res://assets/scenes/golem.tscn" id="37_o8bem"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_i5n5i"]
 font = ExtResource("2_fxj4u")
@@ -1793,5 +1794,8 @@ theme_override_colors/font_color = Color(0.0705882, 0.215686, 0.376471, 1)
 theme_override_fonts/font = ExtResource("2_fxj4u")
 theme_override_font_sizes/font_size = 16
 text = "QUIT"
+
+[node name="Golem" parent="." instance=ExtResource("37_o8bem")]
+position = Vector2(-127, 93)
 
 [connection signal="pressed" from="Exit/Exit Button" to="." method="_on_exit_button_pressed"]
