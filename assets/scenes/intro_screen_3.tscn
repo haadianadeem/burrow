@@ -52,6 +52,7 @@ texture = ExtResource("3_ae4gl")
 metadata/_edit_use_anchors_ = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/MenuBackground"]
+layout_mode = 0
 offset_left = 35.6757
 offset_top = 116.23
 offset_right = 305.676

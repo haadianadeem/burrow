@@ -51,6 +51,7 @@ texture = ExtResource("3_umiv5")
 metadata/_edit_use_anchors_ = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/MenuBackground"]
+layout_mode = 0
 offset_left = 32.1081
 offset_top = 102.628
 offset_right = 332.108
@@ -64,6 +65,7 @@ theme_override_font_sizes/normal_font_size = 16
 text = "Once upon a time, there lived a groundhog named Gary deep within the forest. Gary typically kept to himself, not worrying about the other forest critters. His only concern was to live in comfort."
 
 [node name="Continue" type="TextureButton" parent="CanvasLayer/MenuBackground"]
+layout_mode = 0
 offset_left = 193.838
 offset_top = 441.426
 offset_right = 385.838
@@ -89,6 +91,7 @@ theme_override_fonts/font = ExtResource("4_2aebe")
 text = "CONTINUE"
 
 [node name="Back" type="TextureButton" parent="CanvasLayer/MenuBackground"]
+layout_mode = 0
 offset_top = 441.426
 offset_right = 192.0
 offset_bottom = 537.426

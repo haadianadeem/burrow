@@ -8,6 +8,33 @@
 [ext_resource type="Texture2D" uid="uid://bfofup1yyjvdk" path="res://assets/sprites/Golem_1_walk.png" id="5_nx5td"]
 [ext_resource type="PackedScene" uid="uid://cid075sypo2yj" path="res://assets/scenes/killzone.tscn" id="6_nk2qj"]
 
+[sub_resource type="Animation" id="Animation_o7hy4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"attack"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("KillzoneFlipper/Killzone/CollisionShape2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1, -37)]
+}
+
 [sub_resource type="Animation" id="Animation_382ja"]
 resource_name = "attack"
 tracks/0/type = "value"
@@ -92,33 +119,6 @@ tracks/5/keys = {
 "args": [false],
 "method": &"stop"
 }]
-}
-
-[sub_resource type="Animation" id="Animation_o7hy4"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"attack"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("KillzoneFlipper/Killzone/CollisionShape2D:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-1, -37)]
 }
 
 [sub_resource type="Animation" id="Animation_csc3b"]
