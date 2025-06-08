@@ -17,7 +17,7 @@ tracks/0/path = NodePath("AnimatedSprite2D:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(0.833333),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [&"attack"]
@@ -43,7 +43,7 @@ tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.5, 0.7),
+"times": PackedFloat32Array(0.8667, 1),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [],
@@ -51,6 +51,46 @@ tracks/2/keys = {
 }, {
 "args": [],
 "method": &"deactivate_killzone"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("KillzoneFlipper/Killzone/CollisionShape2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.0333333, 0.866667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1, -37), Vector2(15, -8)]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"finish_attack"
+}]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = false
+tracks/5/path = NodePath("AnimationPlayer")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [false],
+"method": &"stop"
 }]
 }
 
@@ -67,6 +107,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [&"attack"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("KillzoneFlipper/Killzone/CollisionShape2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1, -37)]
 }
 
 [sub_resource type="Animation" id="Animation_csc3b"]
@@ -429,14 +481,14 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1hotq"]
+size = Vector2(30, 3.75)
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_o6srw"]
 radius = 20.0998
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1hotq"]
-size = Vector2(50, 18)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sk2a1"]
-size = Vector2(221, 95)
+size = Vector2(70, 46)
 
 [node name="Golem" type="Area2D"]
 collision_mask = 2
@@ -451,24 +503,33 @@ libraries = {
 position = Vector2(1, -32)
 sprite_frames = SubResource("SpriteFrames_6bget")
 animation = &"attack"
+frame = 8
+
+[node name="KillzoneFlipper" type="Node2D" parent="."]
+
+[node name="Killzone" parent="KillzoneFlipper" instance=ExtResource("6_nk2qj")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillzoneFlipper/Killzone"]
+position = Vector2(-1, -37)
+shape = SubResource("RectangleShape2D_1hotq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
 position = Vector2(1, -15)
 shape = SubResource("CircleShape2D_o6srw")
 
-[node name="Killzone" parent="." instance=ExtResource("6_nk2qj")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
-position = Vector2(13, -9)
-shape = SubResource("RectangleShape2D_1hotq")
-
 [node name="PlayerDetection" type="Area2D" parent="."]
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
-position = Vector2(8.5, -47.5)
+visible = false
+position = Vector2(2, -23)
 shape = SubResource("RectangleShape2D_sk2a1")
+
+[node name="AttackCooldownTimer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
 
 [connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
 [connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]
+[connection signal="timeout" from="AttackCooldownTimer" to="." method="_on_attack_cooldown_timer_timeout"]
