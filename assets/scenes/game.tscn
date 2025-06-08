@@ -1,4 +1,4 @@
-[gd_scene load_steps=82 format=3 uid="uid://ct3ql8cvhu85u"]
+[gd_scene load_steps=83 format=3 uid="uid://ct3ql8cvhu85u"]
 
 [ext_resource type="Texture2D" uid="uid://dklqd6bqahttj" path="res://assets/sprites/world_tileset.png" id="1_p1ssu"]
 [ext_resource type="PackedScene" uid="uid://cv6d6gu7xlp3y" path="res://assets/scenes/player.tscn" id="1_pc1ne"]
@@ -37,6 +37,7 @@
 [ext_resource type="PackedScene" uid="uid://8fyctq1nlp01" path="res://assets/scenes/ice_spike.tscn" id="33_kue6v"]
 [ext_resource type="Texture2D" uid="uid://3fi7duor7kh2" path="res://Buttons/plain_button_hover.png" id="34_b5xm6"]
 [ext_resource type="PackedScene" uid="uid://b6klmabxl5cwe" path="res://assets/scenes/golem.tscn" id="37_o8bem"]
+[ext_resource type="PackedScene" uid="uid://smd2lqsyg0hs" path="res://assets/scenes/coldheart.tscn" id="38_o1mmb"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_i5n5i"]
 font = ExtResource("2_fxj4u")
@@ -1507,15 +1508,19 @@ respawn at that
 point."
 
 [node name="Label5" type="Label" parent="Labels"]
-offset_left = -1035.0
-offset_top = -63.0
-offset_right = -962.0
-offset_bottom = -44.0
+offset_left = -1048.0
+offset_top = -93.0
+offset_right = -900.0
+offset_bottom = -41.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("7_nerni")
 theme_override_font_sizes/font_size = 8
-text = "Press 'e' to
-interact."
+text = "Press 'e' to interact.
+
+TIP: Make sure to 
+face the character
+and don't stand too
+far."
 
 [node name="Label6" type="Label" parent="Labels"]
 offset_left = -90.0
@@ -1761,8 +1766,10 @@ position = Vector2(4776, -83)
 [node name="IceSpike" parent="Ice Spikes" instance=ExtResource("33_kue6v")]
 position = Vector2(1400, -49)
 
-[node name="StartSpawn" type="Marker2D" parent="."]
-position = Vector2(-1238, 58)
+[node name="Golems" type="Node" parent="."]
+
+[node name="Golem" parent="Golems" instance=ExtResource("37_o8bem")]
+position = Vector2(-127, 93)
 
 [node name="Exit" type="CanvasLayer" parent="."]
 
@@ -1795,7 +1802,10 @@ theme_override_fonts/font = ExtResource("2_fxj4u")
 theme_override_font_sizes/font_size = 16
 text = "QUIT"
 
-[node name="Golem" parent="." instance=ExtResource("37_o8bem")]
-position = Vector2(-127, 93)
+[node name="StartSpawn" type="Marker2D" parent="."]
+position = Vector2(-1238, 58)
+
+[node name="Coldheart" parent="." instance=ExtResource("38_o1mmb")]
+position = Vector2(-1162, 77)
 
 [connection signal="pressed" from="Exit/Exit Button" to="." method="_on_exit_button_pressed"]

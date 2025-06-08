@@ -92,6 +92,15 @@ npc_name = "Scotty Squirrel"
 dialogue_resource = SubResource("Resource_ts6ei")
 quests = Array[ExtResource("3_1y2vt")]([SubResource("Resource_mirye")])
 
+[node name="Label" type="Label" parent="."]
+offset_left = -5.0
+offset_top = -29.0
+offset_right = 5.0
+offset_bottom = -13.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_ymek8")
+text = "!"
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -7)
 sprite_frames = SubResource("SpriteFrames_brnmo")
@@ -106,12 +115,3 @@ position = Vector2(0, -6)
 shape = SubResource("CapsuleShape2D_8k135")
 
 [node name="DialogueManager" parent="." instance=ExtResource("4_28mbf")]
-
-[node name="Label" type="Label" parent="."]
-offset_left = -5.0
-offset_top = -29.0
-offset_right = 5.0
-offset_bottom = -13.0
-theme_override_colors/font_color = Color(1, 0, 0, 1)
-theme_override_fonts/font = ExtResource("8_ymek8")
-text = "!"

@@ -84,19 +84,6 @@ npc_name = "Suzy Songbird"
 dialogue_resource = SubResource("Resource_363qd")
 quests = Array[ExtResource("3_5dy4f")]([SubResource("Resource_sve52")])
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(2, -6)
-sprite_frames = SubResource("SpriteFrames_nlmqn")
-animation = &"idle"
-autoplay = "idle"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(0, -5)
-shape = SubResource("CircleShape2D_w8au8")
-
-[node name="DialogueManager" parent="." instance=ExtResource("7_gpejh")]
-
 [node name="Label" type="Label" parent="."]
 offset_left = -5.0
 offset_top = -29.0
@@ -105,3 +92,15 @@ offset_bottom = -13.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_fonts/font = ExtResource("8_ssy1r")
 text = "!"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(2, -6)
+sprite_frames = SubResource("SpriteFrames_nlmqn")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -5)
+shape = SubResource("CircleShape2D_w8au8")
+
+[node name="DialogueManager" parent="." instance=ExtResource("7_gpejh")]
