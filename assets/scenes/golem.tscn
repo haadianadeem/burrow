@@ -500,10 +500,9 @@ libraries = {
 }
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(1, -32)
+position = Vector2(2, -33)
 sprite_frames = SubResource("SpriteFrames_6bget")
 animation = &"attack"
-frame = 8
 
 [node name="KillzoneFlipper" type="Node2D" parent="."]
 
@@ -529,6 +528,16 @@ shape = SubResource("RectangleShape2D_sk2a1")
 [node name="AttackCooldownTimer" type="Timer" parent="."]
 wait_time = 0.3
 one_shot = true
+
+[node name="RayCast_Wall" type="RayCast2D" parent="."]
+visible = false
+position = Vector2(22, -16)
+target_position = Vector2(40, 0)
+
+[node name="RayCast_Floor" type="RayCast2D" parent="."]
+visible = false
+position = Vector2(1, 0)
+target_position = Vector2(5, 26)
 
 [connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
 [connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]

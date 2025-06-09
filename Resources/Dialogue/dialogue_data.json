@@ -217,7 +217,7 @@
 					},
 					{
 						"state": "in_progress",
-						"text": "I tried to escape Coldheart's factory, but ended up stuck in this ice instead!",
+						"text": "I tried to escape Coldheart's factory, but it's so cold my wings froze and I can't fly!",
 						"options": {
 							"Offer to Help": "give_quests",
 							"Say Goodbye": "end",
@@ -226,7 +226,7 @@
 					},
 					{
 						"state": "give_quests",
-						"text": "If you can collect enough fire, you can melt this ice off me. Check your quest log!",
+						"text": "If you can collect enough fire, you can thaw my wings. Check your quest log!",
 						"options": {
 							"Say Goodbye": "exit",
 							"Go Back": "start"
@@ -249,7 +249,7 @@
 				"dialogues": [
 					{
 						"state": "start",
-						"text": "Melt this ice around me, please!",
+						"text": "Help thaw my wings, please!",
 						"options": {
 							"Offer to Help": "give_quests",
 							"Say Goodbye": "exit"
@@ -257,7 +257,7 @@
 					},
 					{
 						"state": "give_quests",
-						"text": "If you can collect enough fire, you can melt this ice off me. Check your quest log!",
+						"text": "If you can collect enough fire, you can thaw my wings. Check your quest log!",
 						"options": {
 							"Go Back": "start",
 							"Say Goodbye": "end"
