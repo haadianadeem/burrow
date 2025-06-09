@@ -1,7 +1,9 @@
 extends Area2D
 
-@export var speed: float = 200.0
+@export var speed: float = 100.0
 @export var direction: Vector2 = Vector2.LEFT
+@onready var warning_label: Label = $WarningLabel
+@export var warning_time: float = 1.0
 #@export var lifetime: float = 3.0  # Seconds before self-destruct
 
 var start_position: Vector2
