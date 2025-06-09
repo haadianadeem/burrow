@@ -1775,6 +1775,9 @@ position = Vector2(3442, -144)
 [node name="Checkpoint5" parent="Checkpoints" instance=ExtResource("22_7jhd0")]
 position = Vector2(4218, -595)
 
+[node name="Checkpoint8" parent="Checkpoints" instance=ExtResource("22_7jhd0")]
+position = Vector2(4980, -562)
+
 [node name="Checkpoint7" parent="Checkpoints" instance=ExtResource("22_7jhd0")]
 position = Vector2(4161, -83)
 
@@ -1929,7 +1932,7 @@ position = Vector2(4776, -83)
 [node name="Ice Spikes" type="Node" parent="."]
 
 [node name="IceSpike" parent="Ice Spikes" instance=ExtResource("33_kue6v")]
-position = Vector2(1400, -49)
+position = Vector2(5856, -512)
 
 [node name="Golems" type="Node" parent="."]
 

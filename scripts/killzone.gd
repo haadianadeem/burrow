@@ -28,3 +28,10 @@ func _on_timer_timeout() -> void:
 		player_to_respawn.global_position = player_to_respawn.respawn_position
 		player_to_respawn.get_node("CollisionShape2D").disabled = false
 		player_to_respawn.visible = true
+		
+		# Reset environment objects like spikes
+		reset_environment()
+		
+func reset_environment():
+	for spike in get_tree().get_nodes_in_group("resettable_spikes"):
+		spike.reset()

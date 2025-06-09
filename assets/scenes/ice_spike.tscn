@@ -88,7 +88,7 @@ size = Vector2(20, 5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8eejl"]
 size = Vector2(20, 5)
 
-[node name="IceSpike" type="Area2D"]
+[node name="IceSpike" type="Area2D" groups=["resettable_spikes"]]
 script = ExtResource("1_rx6wo")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
