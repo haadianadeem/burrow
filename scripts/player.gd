@@ -143,7 +143,7 @@ func _input(event):
 	#Interact with NPC/ Quest Item
 	if can_move:
 		if event.is_action_pressed("ui_interact"):
-			var target = ray_cast_2d.get_collider()
+			var target = $RayCast2D.get_collider()
 			if target != null:
 				if target.is_in_group("NPC"):
 					can_move = false

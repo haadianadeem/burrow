@@ -73,3 +73,4 @@ func get_quest_dialogue() -> Dictionary:
 					return {"text": objective.objective_dialogue, "options": {}}
 			
 	return {"text": "", "options": {}}
+	

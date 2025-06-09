@@ -25,6 +25,8 @@ func _ready():
 	print("NPC Ready. Quests loaded: ", quests.size())
 	
 
+
+
 func start_dialog():
 	var npc_dialogues = dialogue_resource.get_npc_dialogue(npc_id)
 	if npc_dialogues.is_empty():

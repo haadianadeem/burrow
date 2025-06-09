@@ -10,9 +10,6 @@
 script = ExtResource("2_v5obj")
 dialogues = {}
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_73dly"]
-radius = 8.0
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_qftch"]
 atlas = ExtResource("1_7sejr")
 region = Rect2(0, 0, 16, 16)
@@ -49,6 +46,10 @@ animations = [{
 "speed": 6.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mjs1c"]
+radius = 6.0
+height = 28.0
+
 [node name="rabbit_mother" type="Area2D" groups=["NPC"]]
 script = ExtResource("1_6xu8e")
 npc_id = "npc_3"
@@ -64,11 +65,6 @@ theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_w04jq")
 text = "!"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(0, -4)
-shape = SubResource("CircleShape2D_73dly")
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -6)
 sprite_frames = SubResource("SpriteFrames_xnmse")
@@ -76,5 +72,9 @@ animation = &"idle"
 autoplay = "idle"
 frame = 2
 frame_progress = 0.17201
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -6)
+shape = SubResource("CapsuleShape2D_mjs1c")
 
 [node name="DialogueManager" parent="." instance=ExtResource("3_imcd5")]

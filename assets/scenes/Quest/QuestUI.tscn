@@ -26,7 +26,6 @@ script = ExtResource("1_hcu12")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 2
-visible = false
 
 [node name="Panel" type="Panel" parent="CanvasLayer"]
 anchors_preset = 15
@@ -98,7 +97,7 @@ theme_override_constants/separation = 10
 
 [node name="QuestDetails" type="VBoxContainer" parent="CanvasLayer/Panel/Contents/Details"]
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 6
 theme_override_constants/separation = 10
 
 [node name="QuestTitle" type="Label" parent="CanvasLayer/Panel/Contents/Details/QuestDetails"]

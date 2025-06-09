@@ -75,7 +75,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_w8au8"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m5cts"]
+radius = 4.0
 
 [node name="songbird" type="Area2D" groups=["NPC"]]
 script = ExtResource("1_627e5")
@@ -94,13 +95,13 @@ theme_override_fonts/font = ExtResource("8_ssy1r")
 text = "!"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(2, -6)
+position = Vector2(1, -7)
 sprite_frames = SubResource("SpriteFrames_nlmqn")
 animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -5)
-shape = SubResource("CircleShape2D_w8au8")
+position = Vector2(1, -8)
+shape = SubResource("CapsuleShape2D_m5cts")
 
 [node name="DialogueManager" parent="." instance=ExtResource("7_gpejh")]
