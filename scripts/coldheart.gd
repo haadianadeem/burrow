@@ -1,5 +1,8 @@
 extends Area2D
 
+signal coldheart_died
+
+
 @onready var sprite = $AnimatedSprite2D
 @onready var collider = $CollisionShape2D
 
@@ -27,3 +30,5 @@ func _on_body_entered(body):
 
 		# Optionally disable collision so the player can't trigger it again
 		collider.disabled = true
+		print("Emitting coldheart_died signal")
+		emit_signal("coldheart_died")

@@ -1,8 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://brsbjajc11j23"]
+[gd_scene load_steps=2 format=3 uid="uid://dvv0bb8xcv0of"]
 
-[ext_resource type="AudioStream" uid="uid://jju3ms3da56q" path="res://assets/music/time_for_adventure.mp3" id="1_17nvc"]
+[ext_resource type="AudioStream" uid="uid://dt4vrpcnmyqcf" path="res://assets/music/16-Bit RGP Music Ice Lands _Clement Panchout.wav" id="1_ku2yq"]
 
 [node name="Music" type="AudioStreamPlayer2D"]
-stream = ExtResource("1_17nvc")
-autoplay = true
+stream = ExtResource("1_ku2yq")
 bus = &"Music"

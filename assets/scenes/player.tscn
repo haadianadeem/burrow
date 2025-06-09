@@ -333,6 +333,7 @@ collide_with_areas = true
 [node name="HUD" type="CanvasLayer" parent="."]
 
 [node name="Coins" type="ColorRect" parent="HUD"]
+visible = false
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -344,6 +345,7 @@ grow_horizontal = 0
 color = Color(0.141176, 0.141176, 0.141176, 0.788235)
 
 [node name="Icon" type="TextureRect" parent="HUD/Coins"]
+visible = false
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
@@ -353,6 +355,7 @@ texture = ExtResource("3_5tsgp")
 expand_mode = 2
 
 [node name="Amount" type="Label" parent="HUD/Coins"]
+visible = false
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
