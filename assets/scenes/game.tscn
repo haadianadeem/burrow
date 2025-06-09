@@ -1,4 +1,4 @@
-[gd_scene load_steps=89 format=4 uid="uid://ct3ql8cvhu85u"]
+[gd_scene load_steps=88 format=4 uid="uid://ct3ql8cvhu85u"]
 
 [ext_resource type="Texture2D" uid="uid://dklqd6bqahttj" path="res://assets/sprites/world_tileset.png" id="1_p1ssu"]
 [ext_resource type="PackedScene" uid="uid://cv6d6gu7xlp3y" path="res://assets/scenes/player.tscn" id="1_pc1ne"]
@@ -39,7 +39,6 @@
 [ext_resource type="Texture2D" uid="uid://3fi7duor7kh2" path="res://Buttons/plain_button_hover.png" id="34_b5xm6"]
 [ext_resource type="PackedScene" uid="uid://b6klmabxl5cwe" path="res://assets/scenes/golem.tscn" id="37_o8bem"]
 [ext_resource type="PackedScene" uid="uid://smd2lqsyg0hs" path="res://assets/scenes/coldheart.tscn" id="38_o1mmb"]
-[ext_resource type="PackedScene" uid="uid://dioo8sc65q507" path="res://assets/scenes/warning_indicator.tscn" id="40_vxvp5"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_i5n5i"]
 font = ExtResource("2_fxj4u")
@@ -1976,9 +1975,5 @@ position = Vector2(5243, -568)
 
 [node name="Coldheart" parent="." instance=ExtResource("38_o1mmb")]
 position = Vector2(-1162, 77)
-
-[node name="UI" type="CanvasLayer" parent="."]
-
-[node name="WarningIndicator" parent="UI" instance=ExtResource("40_vxvp5")]
 
 [connection signal="pressed" from="Exit/Exit Button" to="." method="_on_exit_button_pressed"]
