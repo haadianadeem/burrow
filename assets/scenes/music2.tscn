@@ -2,6 +2,7 @@
 
 [ext_resource type="AudioStream" uid="uid://dt4vrpcnmyqcf" path="res://assets/music/16-Bit RGP Music Ice Lands _Clement Panchout.wav" id="1_ku2yq"]
 
-[node name="Music" type="AudioStreamPlayer2D"]
+[node name="Music" type="AudioStreamPlayer"]
 stream = ExtResource("1_ku2yq")
+autoplay = true
 bus = &"Music"

@@ -47,7 +47,7 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mjs1c"]
-radius = 6.0
+radius = 14.0
 height = 28.0
 
 [node name="rabbit_mother" type="Area2D" groups=["NPC"]]

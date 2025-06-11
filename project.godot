@@ -17,9 +17,9 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Music="*res://assets/scenes/music.tscn"
 Global="*res://scripts/Global.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+Music2="*res://assets/scenes/music2.tscn"
 
 [display]
 

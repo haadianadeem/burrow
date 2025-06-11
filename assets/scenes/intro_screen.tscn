@@ -20,11 +20,21 @@ script = ExtResource("1_hlm2r")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Background" type="TextureRect" parent="CanvasLayer"]
-offset_right = 590.0
-offset_bottom = 365.0
-scale = Vector2(1.957, 1.957)
+[node name="Background2" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.47309
+anchor_top = 0.371914
+anchor_right = 0.47309
+anchor_bottom = 0.371914
+offset_left = -614.0
+offset_top = -353.0
+offset_right = 44.9999
+offset_bottom = 124.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.9566, 1.77885)
 texture = ExtResource("1_7b8rt")
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="CanvasLayer"]
 offset_left = 405.0

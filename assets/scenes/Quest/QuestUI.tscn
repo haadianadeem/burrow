@@ -103,7 +103,7 @@ theme_override_constants/separation = 10
 [node name="QuestTitle" type="Label" parent="CanvasLayer/Panel/Contents/Details/QuestDetails"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_4jk1l")
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 16
 text = "Title"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -111,7 +111,7 @@ vertical_alignment = 1
 [node name="QuestDescription" type="Label" parent="CanvasLayer/Panel/Contents/Details/QuestDetails"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_4jk1l")
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 12
 text = "Description
 "
 

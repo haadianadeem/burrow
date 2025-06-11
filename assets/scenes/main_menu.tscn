@@ -70,14 +70,15 @@ offset_bottom = -108.378
 [node name="Play" type="TextureButton" parent="CanvasLayer/MenuBackground/Button_manager"]
 layout_mode = 0
 offset_left = 620.757
-offset_top = 319.014
+offset_top = 374.655
 offset_right = 812.757
-offset_bottom = 415.014
+offset_bottom = 470.655
 texture_normal = ExtResource("2_dpdem")
 texture_pressed = ExtResource("3_4i60r")
 texture_hover = ExtResource("4_vq6ts")
 
 [node name="Exit" type="TextureButton" parent="CanvasLayer/MenuBackground/Button_manager"]
+visible = false
 layout_mode = 0
 offset_left = 620.757
 offset_top = 420.014
